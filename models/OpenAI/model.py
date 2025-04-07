@@ -3,7 +3,8 @@ from core.base import LLM
 from openai import OpenAI
 import json
 import yaml
-
+import os
+import re
 
 class GPT(LLM):
     """
@@ -18,7 +19,8 @@ class GPT(LLM):
 
     def __init__(self, randomly_flip_options: bool = False, shuffle_answer_options: bool = False):
         super().__init__(randomly_flip_options=randomly_flip_options, shuffle_answer_options=shuffle_answer_options)
-        self._CLIENT = OpenAI()
+        self._CLIENT = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
         self.RESPONSE_FORMAT = "json_object"
         with open("./models/OpenAI/prompts.yml") as f:
             self._PROMPTS = yaml.safe_load(f)

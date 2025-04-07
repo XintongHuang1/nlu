@@ -1,0 +1,27 @@
+id,model,temperature,seed,timestamp,control_options,control_option_order,control_answer,control_extraction,control_decision,treatment_options,treatment_option_order,treatment_answer,treatment_extraction,treatment_decision,status,error_message,bias
+232,gpt-4o-mini-2024-07-18,0.0,43,2025-04-06 19:05:44,,,,,,,,,,,ERROR,"Could not obtain a decision from the model to the following prompt:
+
+You will be given a decision-making task with multiple answer options.
+Situation:
+Suppose you are a sales manager at a consumer discretionary distribution & retail company.
+You decide the percentage of the sales budget to allocate towards the implementation of a new CRM tool.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+
+Select exactly one option.
+
+Request timed out.",Anchoring

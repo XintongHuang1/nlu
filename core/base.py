@@ -3,6 +3,41 @@ from core.testing import TestCase, Template, TestConfig, DecisionResult
 import numpy as np
 import hashlib
 import re
+from typing import Optional
+
+def extract_option(text: str) -> Optional[int]:
+
+    """
+
+    提取模型回复中的选项编号，支持 'Option 60%' 和 'Option 7' 两种格式。
+
+    返回整数编号（如 7），无法提取则返回 None。
+
+    """
+
+    match = re.search(r"Option\s+(\d{1,3})%", text)
+    print("🔍 Running extract_option on response:", text)
+
+
+    if match:
+
+        percent = int(match.group(1))
+
+        if 0 <= percent <= 100 and percent % 10 == 0:
+
+            return percent // 10 + 1
+
+
+
+    match = re.search(r"\b[oO]ption\s+(\d+)\b", text)
+
+    if match:
+
+        return int(match.group(1))
+
+
+
+    return None
 
 
 class PopulationError(Exception):
@@ -90,7 +125,8 @@ class LLM(ABC):
             temperature (float): The temperature value of the LLM.
             seed (int): The seed for controlling the LLM's output.
 
-        Returns:
+  
+  Returns:
             tuple[str, str, int, list[str], list[int]]: The raw model response, the model's extraction response, the number of the selected option (None if no selected option could be extracted), the answer option texts, and the order of answer options.
         """
 
@@ -119,9 +155,7 @@ class LLM(ABC):
             raise DecisionError(f"An error occurred while trying to extract the chosen option with the following prompt:\n\n{extraction_prompt}\n\n{e}")
 
         # 3C. Extract the option number from the extraction response
-        pattern = r'\b(?:[oO]ption) (\d+)\b'
-        match = re.search(pattern, extraction_response)
-        chosen_option = int(match.group(1)) if match else None
+        chosen_option = extract_option(extraction_response)
 
         if chosen_option is None:
             raise DecisionError(f"Could not extract the chosen option from the model's response:\n\n{decision_response}\n\n{extraction_response}\n\nNo option number detected in response.")

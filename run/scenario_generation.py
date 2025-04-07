@@ -44,7 +44,7 @@ INDUSTRY_GROUPS = [
 ]
 
 
-def get_positions(model_name: str, industry_groups: list[str], n: int = 8, temperature: float = 0.7, seed: int = 42) -> dict:
+def get_positions(model_name: str, industry_groups: list[str], n: int = 16, temperature: float = 0.7, seed: int = 42) -> dict:
     """
     Get n managerial positions in the industry group using the GPT-4o model.
 

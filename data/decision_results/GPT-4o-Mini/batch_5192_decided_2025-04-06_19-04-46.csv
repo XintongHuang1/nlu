@@ -1,0 +1,27 @@
+id,model,temperature,seed,timestamp,control_options,control_option_order,control_answer,control_extraction,control_decision,treatment_options,treatment_option_order,treatment_answer,treatment_extraction,treatment_decision,status,error_message,bias
+0,gpt-4o-mini-2024-07-18,0.0,43,2025-04-06 19:04:46,,,,,,,,,,,ERROR,"Could not obtain a decision from the model to the following prompt:
+
+You will be given a decision-making task with multiple answer options.
+Situation:
+Suppose you are a quality assurance manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a portion of the testing equipment resources to implement the new testing protocol designed to improve product reliability.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+
+Select exactly one option.
+
+Error code: 401 - {'error': {'message': 'Incorrect API key provided: ssk-proj*********************************************************************************************************************************************************uBwA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",Anchoring
