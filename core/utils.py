@@ -107,10 +107,10 @@ def get_model(model_name: str, randomly_flip_options: bool = False, shuffle_answ
     if model_name == "GPT-4o":
         from models.OpenAI.model import GptFourO
         return GptFourO(randomly_flip_options, shuffle_answer_options)
-    elif model_name == "GPT-4o-Mini":
+    elif model_name == "GPT-4o-Mini" or model_name.startswith("ft:gpt-4o-mini"):
         from models.OpenAI.model import GptFourOMini
         return GptFourOMini(randomly_flip_options, shuffle_answer_options)
-    elif model_name == "GPT-3.5-Turbo":
+    elif model_name == "GPT-3.5-Turbo" or model_name.startswith("ft:gpt-3.5-turbo"):
         from models.OpenAI.model import GptThreePointFiveTurbo
         return GptThreePointFiveTurbo(randomly_flip_options, shuffle_answer_options)
     elif model_name == "Llama-3.1-8B":
