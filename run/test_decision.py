@@ -13,14 +13,18 @@ from concurrent.futures import ThreadPoolExecutor
 from functools import partial
 import datetime
 import numpy as np
+
+from functools import partial
 from tqdm import tqdm
+from tqdm.contrib.concurrent import process_map
+
 import argparse
 
 
 # References to relevant data directories
-# DATASET_FILE_PATH = os.path.join(".", "data", "full_dataset.csv")
+DATASET_FILE_PATH = os.path.join(".", "data", "full_dataset.csv")
 # DATASET_FILE_PATH = os.path.join(".", "data", "first_1000_rows.csv")
-DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
+# DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
 
 
 DECISION_RESULTS = os.path.join(".", "data", "decision_results")
@@ -187,20 +191,37 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
     batches = np.array_split(dataset, n_batches)
     
     # Allocate the batches to the workers to obtain decisions.
-    with tqdm(total=len(batches)) as progress_bar:
-        with concurrent.futures.ProcessPoolExecutor(max_workers=n_workers) as executer:
-            for _ in executer.map(
-                partial(
-                    decide_batch,
-                    model_name=model_name,
-                    randomly_flip_options=randomly_flip_options,
-                    shuffle_answer_options=shuffle_answer_options,
-                    temperature=temperature,
-                    seed=seed
-                ),
-                batches
-            ):
-                progress_bar.update()
+    # with tqdm(total=len(batches)) as progress_bar:
+    # with tqdm(total=len(batches), desc="🚀 Processing batches") as progress_bar:
+    #     with concurrent.futures.ProcessPoolExecutor(max_workers=n_workers) as executer:
+    #         for _ in executer.map(
+    #             partial(
+    #                 decide_batch,
+    #                 model_name=model_name,
+    #                 randomly_flip_options=randomly_flip_options,
+    #                 shuffle_answer_options=shuffle_answer_options,
+    #                 temperature=temperature,
+    #                 seed=seed
+    #             ),
+    #             batches
+    #         ):
+    #             progress_bar.update()
+    decide_batch_partial = partial(
+        decide_batch,
+        model_name=model_name,
+        randomly_flip_options=randomly_flip_options,
+        shuffle_answer_options=shuffle_answer_options,
+        temperature=temperature,
+        seed=seed
+    )
+
+    process_map(
+        decide_batch_partial,
+        batches,
+        max_workers=n_workers,
+        desc="🚀 Processing batches"
+    )
+
 
     # Merge all batch results into a single CSV containing all decision results of the model
     merge_datasets(results_directory, DECISION_RESULTS, f"{model_name}.csv", add_id=False)

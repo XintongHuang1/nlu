@@ -219,7 +219,7 @@ class LLM(ABC):
         """
         all_decisions = []
         # for test_id, test_case in enumerate(test_cases):
-        for test_id, test_case in enumerate(tqdm(test_cases, desc="🧠 Deciding")):
+        for test_id, test_case in enumerate(tqdm(test_cases, desc="🧠 Deciding", disable=True)):
             # try to make a decision for the test case within max_retries times
             for retry in range(max_retries):
                 try:
@@ -252,7 +252,7 @@ class LLM(ABC):
                     status="ERROR",
                     error_message=current_error
                 )
-                print(f"Max retries of {max_retries} reached for the test case {test_id} by the model {self.NAME}.\nSkipping...")
+                # print(f"Max retries of {max_retries} reached for the test case {test_id} by the model {self.NAME}.\nSkipping...")
             all_decisions.append(test_decision)
             
         return all_decisions
@@ -373,8 +373,8 @@ class TestGenerator(ABC):
                                 f"\nWarning: Generating the test case failed.\nScenario: {scenario}\nIteration seed: {iteration_seed}\nError: {e}\nRetrying...\n"
                             )
                 # checking whether the generation is successful in the end. Otherwise, notify the user
-                if test_case is None:
-                    print(f"\nMax retries of {max_retries} reached for bias {self.BIAS}, scenario {scenario}.\nSkipping...\n")
+                # if test_case is None:
+                    # print(f"\nMax retries of {max_retries} reached for bias {self.BIAS}, scenario {scenario}.\nSkipping...\n")
                 test_cases.append(test_case)
                 
         return test_cases
