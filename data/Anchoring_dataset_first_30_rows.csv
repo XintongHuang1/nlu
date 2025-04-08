@@ -1,0 +1,2521 @@
+id,raw_control,raw_treatment,bias,variant,scenario,generator,temperature,timestamp,seed,control,treatment,remarks
+0,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">quality assurance</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the semiconductors &amp; semiconductor equipment industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the testing equipment resources to implement the new testing protocol designed to improve product reliability</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">74</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">quality assurance</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the semiconductors &amp; semiconductor equipment industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the testing equipment resources to implement the new testing protocol designed to improve product reliability</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A quality assurance manager at a company from the semiconductors & semiconductor equipment industry deciding on the implementation of a new testing protocol to improve product reliability.,gpt-4o-2024-08-06,0.7,2024-10-02 16:47:43,2315403300,"Situation:
+Suppose you are a quality assurance manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a portion of the testing equipment resources to implement the new testing protocol designed to improve product reliability.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a quality assurance manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a portion of the testing equipment resources to implement the new testing protocol designed to improve product reliability.
+
+Prompt:
+Do you intend to allocate more than 74% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+1,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">quality assurance</insertion>
+                <insertion origin=""model"" instruction=""organization"">a semiconductor company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the testing equipment usage time exclusively to the new testing protocol to assess its effectiveness in improving product reliability</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">28</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">quality assurance</insertion>
+                <insertion origin=""model"" instruction=""organization"">a semiconductor company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the testing equipment usage time exclusively to the new testing protocol to assess its effectiveness in improving product reliability</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A quality assurance manager at a company from the semiconductors & semiconductor equipment industry deciding on the implementation of a new testing protocol to improve product reliability.,gpt-4o-2024-08-06,0.7,2024-10-02 16:47:44,2315403305,"Situation:
+Suppose you are a quality assurance manager at a semiconductor company.
+You allocate a portion of the testing equipment usage time exclusively to the new testing protocol to assess its effectiveness in improving product reliability.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a quality assurance manager at a semiconductor company.
+You allocate a portion of the testing equipment usage time exclusively to the new testing protocol to assess its effectiveness in improving product reliability.
+
+Prompt:
+Do you intend to allocate more than 28% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+2,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">quality assurance</insertion>
+                <insertion origin=""model"" instruction=""organization"">a semiconductor manufacturing company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">determine the proportion of total testing resources to allocate towards the implementation of the new testing protocol to improve product reliability</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">47</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">quality assurance</insertion>
+                <insertion origin=""model"" instruction=""organization"">a semiconductor manufacturing company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">determine the proportion of total testing resources to allocate towards the implementation of the new testing protocol to improve product reliability</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A quality assurance manager at a company from the semiconductors & semiconductor equipment industry deciding on the implementation of a new testing protocol to improve product reliability.,gpt-4o-2024-08-06,0.7,2024-10-02 16:47:45,2315403310,"Situation:
+Suppose you are a quality assurance manager at a semiconductor manufacturing company.
+You determine the proportion of total testing resources to allocate towards the implementation of the new testing protocol to improve product reliability.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a quality assurance manager at a semiconductor manufacturing company.
+You determine the proportion of total testing resources to allocate towards the implementation of the new testing protocol to improve product reliability.
+
+Prompt:
+Do you intend to allocate more than 47% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+3,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">quality assurance</insertion>
+                <insertion origin=""model"" instruction=""organization"">a semiconductor manufacturing company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the testing team's time to conduct additional reliability assessments on newly produced chips</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">82</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">quality assurance</insertion>
+                <insertion origin=""model"" instruction=""organization"">a semiconductor manufacturing company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the testing team's time to conduct additional reliability assessments on newly produced chips</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A quality assurance manager at a company from the semiconductors & semiconductor equipment industry deciding on the implementation of a new testing protocol to improve product reliability.,gpt-4o-2024-08-06,0.7,2024-10-02 16:47:46,2315403315,"Situation:
+Suppose you are a quality assurance manager at a semiconductor manufacturing company.
+You allocate a portion of the testing team's time to conduct additional reliability assessments on newly produced chips.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a quality assurance manager at a semiconductor manufacturing company.
+You allocate a portion of the testing team's time to conduct additional reliability assessments on newly produced chips.
+
+Prompt:
+Do you intend to allocate more than 82% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+4,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">quality assurance</insertion>
+                <insertion origin=""model"" instruction=""organization"">a leading semiconductor manufacturing company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">determine the percentage of the testing team’s working hours to be dedicated to implementing and refining the new testing protocol</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">73</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">quality assurance</insertion>
+                <insertion origin=""model"" instruction=""organization"">a leading semiconductor manufacturing company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">determine the percentage of the testing team’s working hours to be dedicated to implementing and refining the new testing protocol</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A quality assurance manager at a company from the semiconductors & semiconductor equipment industry deciding on the implementation of a new testing protocol to improve product reliability.,gpt-4o-2024-08-06,0.7,2024-10-02 16:47:48,2315403320,"Situation:
+Suppose you are a quality assurance manager at a leading semiconductor manufacturing company.
+You determine the percentage of the testing team’s working hours to be dedicated to implementing and refining the new testing protocol.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a quality assurance manager at a leading semiconductor manufacturing company.
+You determine the percentage of the testing team’s working hours to be dedicated to implementing and refining the new testing protocol.
+
+Prompt:
+Do you intend to allocate more than 73% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+5,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">customer service</insertion>
+                <insertion origin=""model"" instruction=""organization"">a consumer durables &amp; apparel company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a percentage of the customer feedback budget to implement a new real-time feedback analysis tool</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">53</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">customer service</insertion>
+                <insertion origin=""model"" instruction=""organization"">a consumer durables &amp; apparel company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a percentage of the customer feedback budget to implement a new real-time feedback analysis tool</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A customer service manager at a company from the consumer durables & apparel industry deciding the improvements needed in the customer feedback process to enhance satisfaction.,gpt-4o-2024-08-06,0.7,2024-10-02 16:37:43,1446512872,"Situation:
+Suppose you are a customer service manager at a consumer durables & apparel company.
+You allocate a percentage of the customer feedback budget to implement a new real-time feedback analysis tool.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a customer service manager at a consumer durables & apparel company.
+You allocate a percentage of the customer feedback budget to implement a new real-time feedback analysis tool.
+
+Prompt:
+Do you intend to allocate more than 53% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+6,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">customer service</insertion>
+                <insertion origin=""model"" instruction=""organization"">XYZ Consumer Goods</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the budget to upgrade the customer feedback system</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">45</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">customer service</insertion>
+                <insertion origin=""model"" instruction=""organization"">XYZ Consumer Goods</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the budget to upgrade the customer feedback system</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A customer service manager at a company from the consumer durables & apparel industry deciding the improvements needed in the customer feedback process to enhance satisfaction.,gpt-4o-2024-08-06,0.7,2024-10-02 16:37:44,1446512877,"Situation:
+Suppose you are a customer service manager at XYZ Consumer Goods.
+You allocate a portion of the budget to upgrade the customer feedback system.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a customer service manager at XYZ Consumer Goods.
+You allocate a portion of the budget to upgrade the customer feedback system.
+
+Prompt:
+Do you intend to allocate more than 45% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+7,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">customer service</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the consumer durables &amp; apparel industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the department's budget to upgrade the customer feedback system software to improve data analysis capabilities and response times</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">65</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">customer service</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the consumer durables &amp; apparel industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the department's budget to upgrade the customer feedback system software to improve data analysis capabilities and response times</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A customer service manager at a company from the consumer durables & apparel industry deciding the improvements needed in the customer feedback process to enhance satisfaction.,gpt-4o-2024-08-06,0.7,2024-10-02 16:37:45,1446512882,"Situation:
+Suppose you are a customer service manager at a company in the consumer durables & apparel industry.
+You allocate a portion of the department's budget to upgrade the customer feedback system software to improve data analysis capabilities and response times.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a customer service manager at a company in the consumer durables & apparel industry.
+You allocate a portion of the department's budget to upgrade the customer feedback system software to improve data analysis capabilities and response times.
+
+Prompt:
+Do you intend to allocate more than 65% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+8,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">customer service</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the consumer durables &amp; apparel industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the customer service team's working hours to analyze and implement improvements based on customer feedback</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">86</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">customer service</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the consumer durables &amp; apparel industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the customer service team's working hours to analyze and implement improvements based on customer feedback</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A customer service manager at a company from the consumer durables & apparel industry deciding the improvements needed in the customer feedback process to enhance satisfaction.,gpt-4o-2024-08-06,0.7,2024-10-02 16:37:46,1446512887,"Situation:
+Suppose you are a customer service manager at a company in the consumer durables & apparel industry.
+You allocate a portion of the customer service team's working hours to analyze and implement improvements based on customer feedback.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a customer service manager at a company in the consumer durables & apparel industry.
+You allocate a portion of the customer service team's working hours to analyze and implement improvements based on customer feedback.
+
+Prompt:
+Do you intend to allocate more than 86% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+9,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">customer service</insertion>
+                <insertion origin=""model"" instruction=""organization"">a consumer durables &amp; apparel company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">decide how much of the budget should be allocated to enhancing the customer feedback process</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">29</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">customer service</insertion>
+                <insertion origin=""model"" instruction=""organization"">a consumer durables &amp; apparel company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">decide how much of the budget should be allocated to enhancing the customer feedback process</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A customer service manager at a company from the consumer durables & apparel industry deciding the improvements needed in the customer feedback process to enhance satisfaction.,gpt-4o-2024-08-06,0.7,2024-10-02 16:37:47,1446512892,"Situation:
+Suppose you are a customer service manager at a consumer durables & apparel company.
+You decide how much of the budget should be allocated to enhancing the customer feedback process.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a customer service manager at a consumer durables & apparel company.
+You decide how much of the budget should be allocated to enhancing the customer feedback process.
+
+Prompt:
+Do you intend to allocate more than 29% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+10,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">marketing</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the household &amp; personal products industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">need to allocate the digital marketing budget among various online advertising platforms to optimize brand visibility and engagement</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">40</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">marketing</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the household &amp; personal products industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">need to allocate the digital marketing budget among various online advertising platforms to optimize brand visibility and engagement</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A marketing manager at a company from the household & personal products industry deciding on the allocation of the digital marketing budget among various platforms.,gpt-4o-2024-08-06,0.7,2024-10-02 16:41:39,1008304983,"Situation:
+Suppose you are a marketing manager at a company in the household & personal products industry.
+You need to allocate the digital marketing budget among various online advertising platforms to optimize brand visibility and engagement.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a marketing manager at a company in the household & personal products industry.
+You need to allocate the digital marketing budget among various online advertising platforms to optimize brand visibility and engagement.
+
+Prompt:
+Do you intend to allocate more than 40% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+11,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">marketing</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the household &amp; personal products industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">decide on the allocation of the digital marketing budget among various platforms</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">59</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">marketing</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the household &amp; personal products industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">decide on the allocation of the digital marketing budget among various platforms</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A marketing manager at a company from the household & personal products industry deciding on the allocation of the digital marketing budget among various platforms.,gpt-4o-2024-08-06,0.7,2024-10-02 16:41:40,1008304988,"Situation:
+Suppose you are a marketing manager at a company in the household & personal products industry.
+You decide on the allocation of the digital marketing budget among various platforms.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a marketing manager at a company in the household & personal products industry.
+You decide on the allocation of the digital marketing budget among various platforms.
+
+Prompt:
+Do you intend to allocate more than 59% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+12,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">marketing</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the household &amp; personal products industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">decide how to allocate the digital marketing budget across various online advertising platforms to maximize reach and engagement</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">84</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">marketing</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the household &amp; personal products industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">decide how to allocate the digital marketing budget across various online advertising platforms to maximize reach and engagement</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A marketing manager at a company from the household & personal products industry deciding on the allocation of the digital marketing budget among various platforms.,gpt-4o-2024-08-06,0.7,2024-10-02 16:41:41,1008304993,"Situation:
+Suppose you are a marketing manager at a company in the household & personal products industry.
+You decide how to allocate the digital marketing budget across various online advertising platforms to maximize reach and engagement.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a marketing manager at a company in the household & personal products industry.
+You decide how to allocate the digital marketing budget across various online advertising platforms to maximize reach and engagement.
+
+Prompt:
+Do you intend to allocate more than 84% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+13,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">marketing</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the household &amp; personal products industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">determine how to distribute the digital marketing budget across various online platforms to maximize reach and engagement</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">45</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">marketing</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the household &amp; personal products industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">determine how to distribute the digital marketing budget across various online platforms to maximize reach and engagement</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A marketing manager at a company from the household & personal products industry deciding on the allocation of the digital marketing budget among various platforms.,gpt-4o-2024-08-06,0.7,2024-10-02 16:41:42,1008304998,"Situation:
+Suppose you are a marketing manager at a company in the household & personal products industry.
+You determine how to distribute the digital marketing budget across various online platforms to maximize reach and engagement.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a marketing manager at a company in the household & personal products industry.
+You determine how to distribute the digital marketing budget across various online platforms to maximize reach and engagement.
+
+Prompt:
+Do you intend to allocate more than 45% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+14,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">marketing</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the household &amp; personal products industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate the digital marketing budget among various online advertising platforms</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">49</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">marketing</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the household &amp; personal products industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate the digital marketing budget among various online advertising platforms</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A marketing manager at a company from the household & personal products industry deciding on the allocation of the digital marketing budget among various platforms.,gpt-4o-2024-08-06,0.7,2024-10-02 16:41:43,1008305003,"Situation:
+Suppose you are a marketing manager at a company in the household & personal products industry.
+You allocate the digital marketing budget among various online advertising platforms.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a marketing manager at a company in the household & personal products industry.
+You allocate the digital marketing budget among various online advertising platforms.
+
+Prompt:
+Do you intend to allocate more than 49% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+15,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">human resources</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the semiconductors &amp; semiconductor equipment industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a percentage of the recruitment budget to digital marketing campaigns targeting top talent</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">30</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">human resources</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the semiconductors &amp; semiconductor equipment industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a percentage of the recruitment budget to digital marketing campaigns targeting top talent</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A human resources manager at a company from the semiconductors & semiconductor equipment industry deciding on new recruitment strategies to attract top talent in a competitive market.,gpt-4o-2024-08-06,0.7,2024-10-02 16:48:19,3419969638,"Situation:
+Suppose you are a human resources manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a percentage of the recruitment budget to digital marketing campaigns targeting top talent.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a human resources manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a percentage of the recruitment budget to digital marketing campaigns targeting top talent.
+
+Prompt:
+Do you intend to allocate more than 30% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+16,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">human resources</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the semiconductors &amp; semiconductor equipment industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the recruitment budget specifically for attending industry job fairs to attract top talent</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">85</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">human resources</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the semiconductors &amp; semiconductor equipment industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the recruitment budget specifically for attending industry job fairs to attract top talent</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A human resources manager at a company from the semiconductors & semiconductor equipment industry deciding on new recruitment strategies to attract top talent in a competitive market.,gpt-4o-2024-08-06,0.7,2024-10-02 16:48:20,3419969643,"Situation:
+Suppose you are a human resources manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a portion of the recruitment budget specifically for attending industry job fairs to attract top talent.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a human resources manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a portion of the recruitment budget specifically for attending industry job fairs to attract top talent.
+
+Prompt:
+Do you intend to allocate more than 85% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+17,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">human resources</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the semiconductors &amp; semiconductor equipment industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the recruitment budget specifically for digital marketing campaigns to attract top talent</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">15</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">human resources</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the semiconductors &amp; semiconductor equipment industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the recruitment budget specifically for digital marketing campaigns to attract top talent</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A human resources manager at a company from the semiconductors & semiconductor equipment industry deciding on new recruitment strategies to attract top talent in a competitive market.,gpt-4o-2024-08-06,0.7,2024-10-02 16:48:21,3419969648,"Situation:
+Suppose you are a human resources manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a portion of the recruitment budget specifically for digital marketing campaigns to attract top talent.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a human resources manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a portion of the recruitment budget specifically for digital marketing campaigns to attract top talent.
+
+Prompt:
+Do you intend to allocate more than 15% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+18,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">human resources</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the semiconductors &amp; semiconductor equipment industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a percentage of the recruitment budget towards digital marketing campaigns to attract top talent</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">77</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">human resources</insertion>
+                <insertion origin=""model"" instruction=""organization"">a company in the semiconductors &amp; semiconductor equipment industry</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a percentage of the recruitment budget towards digital marketing campaigns to attract top talent</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A human resources manager at a company from the semiconductors & semiconductor equipment industry deciding on new recruitment strategies to attract top talent in a competitive market.,gpt-4o-2024-08-06,0.7,2024-10-02 16:48:22,3419969653,"Situation:
+Suppose you are a human resources manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a percentage of the recruitment budget towards digital marketing campaigns to attract top talent.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a human resources manager at a company in the semiconductors & semiconductor equipment industry.
+You allocate a percentage of the recruitment budget towards digital marketing campaigns to attract top talent.
+
+Prompt:
+Do you intend to allocate more than 77% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+19,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">human resources</insertion>
+                <insertion origin=""model"" instruction=""organization"">a leading semiconductor company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the recruitment budget to enhance the company's presence at top engineering universities for career fair participation</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">64</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">human resources</insertion>
+                <insertion origin=""model"" instruction=""organization"">a leading semiconductor company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the recruitment budget to enhance the company's presence at top engineering universities for career fair participation</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A human resources manager at a company from the semiconductors & semiconductor equipment industry deciding on new recruitment strategies to attract top talent in a competitive market.,gpt-4o-2024-08-06,0.7,2024-10-02 16:48:23,3419969658,"Situation:
+Suppose you are a human resources manager at a leading semiconductor company.
+You allocate a portion of the recruitment budget to enhance the company's presence at top engineering universities for career fair participation.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a human resources manager at a leading semiconductor company.
+You allocate a portion of the recruitment budget to enhance the company's presence at top engineering universities for career fair participation.
+
+Prompt:
+Do you intend to allocate more than 64% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+20,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">product development</insertion>
+                <insertion origin=""model"" instruction=""organization"">Telecom Innovators Inc</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate development hours to implement new features based on customer feedback for the upcoming software update</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">26</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">product development</insertion>
+                <insertion origin=""model"" instruction=""organization"">Telecom Innovators Inc</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate development hours to implement new features based on customer feedback for the upcoming software update</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A product development manager at a company from the telecommunication services industry deciding which features to prioritize in the next software update to meet customer demands.,gpt-4o-2024-08-06,0.7,2024-10-02 16:48:44,2411866400,"Situation:
+Suppose you are a product development manager at Telecom Innovators Inc.
+You allocate development hours to implement new features based on customer feedback for the upcoming software update.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a product development manager at Telecom Innovators Inc.
+You allocate development hours to implement new features based on customer feedback for the upcoming software update.
+
+Prompt:
+Do you intend to allocate more than 26% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+21,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">product development</insertion>
+                <insertion origin=""model"" instruction=""organization"">a telecommunications company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the development team’s time to focus on implementing the most requested feature by customers in the next software update</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">14</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">product development</insertion>
+                <insertion origin=""model"" instruction=""organization"">a telecommunications company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate a portion of the development team’s time to focus on implementing the most requested feature by customers in the next software update</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A product development manager at a company from the telecommunication services industry deciding which features to prioritize in the next software update to meet customer demands.,gpt-4o-2024-08-06,0.7,2024-10-02 16:48:45,2411866405,"Situation:
+Suppose you are a product development manager at a telecommunications company.
+You allocate a portion of the development team’s time to focus on implementing the most requested feature by customers in the next software update.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a product development manager at a telecommunications company.
+You allocate a portion of the development team’s time to focus on implementing the most requested feature by customers in the next software update.
+
+Prompt:
+Do you intend to allocate more than 14% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+22,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">product development</insertion>
+                <insertion origin=""model"" instruction=""organization"">a telecommunications company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">decide how much of the development team's time should be allocated to implementing new software features in the upcoming update</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">38</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">product development</insertion>
+                <insertion origin=""model"" instruction=""organization"">a telecommunications company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">decide how much of the development team's time should be allocated to implementing new software features in the upcoming update</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A product development manager at a company from the telecommunication services industry deciding which features to prioritize in the next software update to meet customer demands.,gpt-4o-2024-08-06,0.7,2024-10-02 16:48:46,2411866410,"Situation:
+Suppose you are a product development manager at a telecommunications company.
+You decide how much of the development team's time should be allocated to implementing new software features in the upcoming update.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a product development manager at a telecommunications company.
+You decide how much of the development team's time should be allocated to implementing new software features in the upcoming update.
+
+Prompt:
+Do you intend to allocate more than 38% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+23,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">product development</insertion>
+                <insertion origin=""model"" instruction=""organization"">a telecommunication services company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate development time to prioritize new software features based on customer demand</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">35</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">product development</insertion>
+                <insertion origin=""model"" instruction=""organization"">a telecommunication services company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate development time to prioritize new software features based on customer demand</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A product development manager at a company from the telecommunication services industry deciding which features to prioritize in the next software update to meet customer demands.,gpt-4o-2024-08-06,0.7,2024-10-02 16:48:48,2411866415,"Situation:
+Suppose you are a product development manager at a telecommunication services company.
+You allocate development time to prioritize new software features based on customer demand.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a product development manager at a telecommunication services company.
+You allocate development time to prioritize new software features based on customer demand.
+
+Prompt:
+Do you intend to allocate more than 35% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+24,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">product development</insertion>
+                <insertion origin=""model"" instruction=""organization"">a telecommunication services company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate development resources to prioritize customer-requested features in the next software update</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">52</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">product development</insertion>
+                <insertion origin=""model"" instruction=""organization"">a telecommunication services company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate development resources to prioritize customer-requested features in the next software update</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A product development manager at a company from the telecommunication services industry deciding which features to prioritize in the next software update to meet customer demands.,gpt-4o-2024-08-06,0.7,2024-10-02 16:48:49,2411866420,"Situation:
+Suppose you are a product development manager at a telecommunication services company.
+You allocate development resources to prioritize customer-requested features in the next software update.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a product development manager at a telecommunication services company.
+You allocate development resources to prioritize customer-requested features in the next software update.
+
+Prompt:
+Do you intend to allocate more than 52% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+25,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">traffic</insertion>
+                <insertion origin=""model"" instruction=""organization"">a transportation company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate the number of personnel to manage peak traffic hours effectively</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">85</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">traffic</insertion>
+                <insertion origin=""model"" instruction=""organization"">a transportation company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate the number of personnel to manage peak traffic hours effectively</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A traffic manager at a company from the transportation industry deciding on the scheduling of personnel to manage peak traffic hours effectively.,gpt-4o-2024-08-06,0.7,2024-10-02 16:36:02,1796130366,"Situation:
+Suppose you are a traffic manager at a transportation company.
+You allocate the number of personnel to manage peak traffic hours effectively.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a traffic manager at a transportation company.
+You allocate the number of personnel to manage peak traffic hours effectively.
+
+Prompt:
+Do you intend to allocate more than 85% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+26,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">traffic</insertion>
+                <insertion origin=""model"" instruction=""organization"">a transportation company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate personnel to cover peak traffic hours effectively</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">29</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">traffic</insertion>
+                <insertion origin=""model"" instruction=""organization"">a transportation company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate personnel to cover peak traffic hours effectively</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A traffic manager at a company from the transportation industry deciding on the scheduling of personnel to manage peak traffic hours effectively.,gpt-4o-2024-08-06,0.7,2024-10-02 16:36:03,1796130371,"Situation:
+Suppose you are a traffic manager at a transportation company.
+You allocate personnel to cover peak traffic hours effectively.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a traffic manager at a transportation company.
+You allocate personnel to cover peak traffic hours effectively.
+
+Prompt:
+Do you intend to allocate more than 29% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+27,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">traffic</insertion>
+                <insertion origin=""model"" instruction=""organization"">a transportation company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate personnel to manage peak traffic hours effectively</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">27</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">traffic</insertion>
+                <insertion origin=""model"" instruction=""organization"">a transportation company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">allocate personnel to manage peak traffic hours effectively</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A traffic manager at a company from the transportation industry deciding on the scheduling of personnel to manage peak traffic hours effectively.,gpt-4o-2024-08-06,0.7,2024-10-02 16:36:04,1796130376,"Situation:
+Suppose you are a traffic manager at a transportation company.
+You allocate personnel to manage peak traffic hours effectively.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a traffic manager at a transportation company.
+You allocate personnel to manage peak traffic hours effectively.
+
+Prompt:
+Do you intend to allocate more than 27% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+28,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">traffic</insertion>
+                <insertion origin=""model"" instruction=""organization"">a transportation company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">determine the allocation of staff hours during peak traffic periods to ensure efficient management and minimal congestion</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">79</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">traffic</insertion>
+                <insertion origin=""model"" instruction=""organization"">a transportation company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">determine the allocation of staff hours during peak traffic periods to ensure efficient management and minimal congestion</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A traffic manager at a company from the transportation industry deciding on the scheduling of personnel to manage peak traffic hours effectively.,gpt-4o-2024-08-06,0.7,2024-10-02 16:36:05,1796130381,"Situation:
+Suppose you are a traffic manager at a transportation company.
+You determine the allocation of staff hours during peak traffic periods to ensure efficient management and minimal congestion.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a traffic manager at a transportation company.
+You determine the allocation of staff hours during peak traffic periods to ensure efficient management and minimal congestion.
+
+Prompt:
+Do you intend to allocate more than 79% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
+29,"<template type=""control"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">traffic</insertion>
+                <insertion origin=""model"" instruction=""organization"">a transportation company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">determine the percentage of personnel to assign to manage operations during peak traffic hours</insertion>
+            </insertions>
+        </template>
+        ","<template type=""treatment"">
+            <situation>Suppose you are [[a/an]] [[type]] manager at [[organization]].</situation>
+            <situation>You [[formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers.]].</situation>
+            <prompt>Do you intend to allocate more than {{anchor}}% for this purpose? Which allocation level do you choose for this purpose?</prompt>
+            <option>0%</option>
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <insertions>
+                <insertion origin=""user"" instruction=""anchor"">56</insertion>
+                <insertion origin=""model"" instruction=""a/an"">a</insertion>
+                <insertion origin=""model"" instruction=""type"">traffic</insertion>
+                <insertion origin=""model"" instruction=""organization"">a transportation company</insertion>
+                <insertion origin=""model"" instruction=""formulate a task of quantitative allocation of a single concrete resource for one single particular purpose. Do not include any numbers."">determine the percentage of personnel to assign to manage operations during peak traffic hours</insertion>
+            </insertions>
+        </template>
+        ",Anchoring,None,A traffic manager at a company from the transportation industry deciding on the scheduling of personnel to manage peak traffic hours effectively.,gpt-4o-2024-08-06,0.7,2024-10-02 16:36:06,1796130386,"Situation:
+Suppose you are a traffic manager at a transportation company.
+You determine the percentage of personnel to assign to manage operations during peak traffic hours.
+
+Prompt:
+Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+","Situation:
+Suppose you are a traffic manager at a transportation company.
+You determine the percentage of personnel to assign to manage operations during peak traffic hours.
+
+Prompt:
+Do you intend to allocate more than 56% for this purpose? Which allocation level do you choose for this purpose?
+
+Answer Options:
+Option 1: 0%
+Option 2: 10%
+Option 3: 20%
+Option 4: 30%
+Option 5: 40%
+Option 6: 50%
+Option 7: 60%
+Option 8: 70%
+Option 9: 80%
+Option 10: 90%
+Option 11: 100%
+",None
