@@ -4,6 +4,7 @@ import numpy as np
 import hashlib
 import re
 from typing import Optional
+from tqdm import tqdm
 
 def extract_option(text: str) -> Optional[int]:
 
@@ -16,7 +17,7 @@ def extract_option(text: str) -> Optional[int]:
     """
 
     match = re.search(r"Option\s+(\d{1,3})%", text)
-    print("🔍 Running extract_option on response:", text)
+    # print("🔍 Running extract_option on response:", text)
 
 
     if match:
@@ -217,7 +218,8 @@ class LLM(ABC):
             list[DecisionResult]: A list of DecisionResult objects representing the decisions made by the LLM.
         """
         all_decisions = []
-        for test_id, test_case in enumerate(test_cases):
+        # for test_id, test_case in enumerate(test_cases):
+        for test_id, test_case in enumerate(tqdm(test_cases, desc="🧠 Deciding")):
             # try to make a decision for the test case within max_retries times
             for retry in range(max_retries):
                 try:
