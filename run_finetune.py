@@ -1,10 +1,10 @@
 # run_finetune.py
-
+import os
 import time
 import argparse
 from openai import OpenAI
-
-API_KEY = "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"  
+ 
+API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=API_KEY)
 
 # Train and Validation/test path
