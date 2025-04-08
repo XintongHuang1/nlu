@@ -204,7 +204,7 @@ class LLM(ABC):
 
         return decision_result
     
-    def decide_all(self, test_cases: list[TestCase], temperature: float = 0.0, seed: int = 42, max_retries: int = 5) -> list[DecisionResult]:
+    def decide_all(self, test_cases: list[TestCase], temperature: float = 0.0, seed: int = 42, max_retries: int = 5, progress_bar=None) -> list[DecisionResult]:
         """
         Function to decide on all test cases in the list.
         
@@ -218,8 +218,9 @@ class LLM(ABC):
             list[DecisionResult]: A list of DecisionResult objects representing the decisions made by the LLM.
         """
         all_decisions = []
-        # for test_id, test_case in enumerate(test_cases):
-        for test_id, test_case in enumerate(tqdm(test_cases, desc="🧠 Deciding", disable=True)):
+        for test_id, test_case in enumerate(test_cases):
+
+        # for test_id, test_case in enumerate(tqdm(test_cases, desc="🧠 Deciding", disable=True)):
             # try to make a decision for the test case within max_retries times
             for retry in range(max_retries):
                 try:
@@ -252,9 +253,13 @@ class LLM(ABC):
                     status="ERROR",
                     error_message=current_error
                 )
-                # print(f"Max retries of {max_retries} reached for the test case {test_id} by the model {self.NAME}.\nSkipping...")
+                print(f"Max retries of {max_retries} reached for the test case {test_id} by the model {self.NAME}.\nSkipping...")
             all_decisions.append(test_decision)
             
+            if progress_bar:
+                progress_bar.update(1)
+                
+                
         return all_decisions
 
     def _validate_population(self, template: Template, insertions: dict, raw_model_output: str = None) -> bool:
@@ -373,8 +378,8 @@ class TestGenerator(ABC):
                                 f"\nWarning: Generating the test case failed.\nScenario: {scenario}\nIteration seed: {iteration_seed}\nError: {e}\nRetrying...\n"
                             )
                 # checking whether the generation is successful in the end. Otherwise, notify the user
-                # if test_case is None:
-                    # print(f"\nMax retries of {max_retries} reached for bias {self.BIAS}, scenario {scenario}.\nSkipping...\n")
+                if test_case is None:
+                    print(f"\nMax retries of {max_retries} reached for bias {self.BIAS}, scenario {scenario}.\nSkipping...\n")
                 test_cases.append(test_case)
                 
         return test_cases

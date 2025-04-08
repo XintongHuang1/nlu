@@ -88,7 +88,7 @@ def convert_decisions(ids: list[int], decision_results: list[DecisionResult]) ->
     return decision_df
 
 
-def decide_batch(batch: pd.DataFrame, model_name: str, randomly_flip_options: bool, shuffle_answer_options: bool, temperature: float, seed: int):
+def decide_batch(batch: pd.DataFrame, model_name: str, randomly_flip_options: bool, shuffle_answer_options: bool, temperature: float, seed: int, progress_bar=None):
     """
     Decides the dataset batch using the specified model.
 
@@ -132,7 +132,7 @@ def decide_batch(batch: pd.DataFrame, model_name: str, randomly_flip_options: bo
             )
 
         # Decide the test cases and obtain the DecisionResult objects
-        decision_results = model.decide_all(test_cases, temperature, seed, max_retries=1)
+        decision_results = model.decide_all(test_cases, temperature, seed, max_retries=1, progress_bar=progress_bar)
 
         # Store all the results (both failed and completed) in a new DataFrame
         decision_df = convert_decisions(ids, decision_results)
@@ -206,21 +206,58 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
     #             batches
     #         ):
     #             progress_bar.update()
-    decide_batch_partial = partial(
-        decide_batch,
-        model_name=model_name,
-        randomly_flip_options=randomly_flip_options,
-        shuffle_answer_options=shuffle_answer_options,
-        temperature=temperature,
-        seed=seed
-    )
 
-    process_map(
-        decide_batch_partial,
-        batches,
-        max_workers=n_workers,
-        desc="🚀 Processing batches"
-    )
+
+    # decide_batch_partial = partial(
+    #     decide_batch,
+    #     model_name=model_name,
+    #     randomly_flip_options=randomly_flip_options,
+    #     shuffle_answer_options=shuffle_answer_options,
+    #     temperature=temperature,
+    #     seed=seed
+    # )
+
+    # process_map(
+    #     decide_batch_partial,
+    #     batches,
+    #     max_workers=n_workers,
+    #     desc="🚀 Processing batches"
+    # )
+    
+    total_test_cases = len(dataset)
+
+    if n_workers == 1:
+        with tqdm(total=total_test_cases, desc="🧠 Deciding test cases") as progress_bar:
+            for batch in batches:
+                decide_batch(
+                    batch=batch,
+                    model_name=model_name,
+                    randomly_flip_options=randomly_flip_options,
+                    shuffle_answer_options=shuffle_answer_options,
+                    temperature=temperature,
+                    seed=seed,
+                    progress_bar=progress_bar
+                )
+    else:
+        from functools import partial
+        from tqdm.contrib.concurrent import process_map
+
+        decide_batch_partial = partial(
+            decide_batch,
+            model_name=model_name,
+            randomly_flip_options=randomly_flip_options,
+            shuffle_answer_options=shuffle_answer_options,
+            temperature=temperature,
+            seed=seed
+        )
+
+        process_map(
+            decide_batch_partial,
+            batches,
+            max_workers=n_workers,
+            desc="🚀 Processing batches"
+        )
+
 
 
     # Merge all batch results into a single CSV containing all decision results of the model
