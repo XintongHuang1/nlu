@@ -87,8 +87,9 @@ def convert_decisions(ids: list[int], decision_results: list[DecisionResult]) ->
 
     return decision_df
 
-
-def decide_batch(batch: pd.DataFrame, model_name: str, randomly_flip_options: bool, shuffle_answer_options: bool, temperature: float, seed: int, progress_bar=None):
+################ PRPOMPT STRATEGY ####################### 加入 prompt_strategy变量
+def decide_batch(batch: pd.DataFrame, model_name: str, randomly_flip_options: bool, shuffle_answer_options: bool, temperature: float, seed: int, 
+                prompt_strategy, progress_bar=None):
     """
     Decides the dataset batch using the specified model.
 
@@ -117,11 +118,42 @@ def decide_batch(batch: pd.DataFrame, model_name: str, randomly_flip_options: bo
         # Construct test cases for all relevant rows in the batch
         for _, row in batch[batch['bias'].str.strip().str.title().str.replace(' ', '') == bias].iterrows():
             ids.append(row['id'])
+            
+################ PRPOMPT STRATEGY ####################### 0.原始版本，保存以便修改
+#             test_cases.append(
+#                 TestCase(
+#                     bias=row["bias"],
+#                     control=Template(row["raw_control"]),
+#                     treatment=Template(row["raw_treatment"]),
+#                     generator=row["generator"],
+#                     temperature=row["temperature"],
+#                     seed=row["seed"],
+#                     scenario=row["scenario"],
+#                     variant=row["variant"],
+#                     remarks=row["remarks"],
+#                 )
+#             )
+################ PRPOMPT STRATEGY ####################### 1.构造 Template 对象（基于 XML 字符串）
+            control_template = Template(row["raw_control"])
+            treatment_template = Template(row["raw_treatment"])
+            
+################ PRPOMPT STRATEGY ####################### 2.提取原始 <prompt> 内容
+            control_prompt = control_template._data.find("prompt").text
+            treatment_prompt = treatment_template._data.find("prompt").text
+            
+################ PRPOMPT STRATEGY ####################### 3.使用 apply_prompt_strategy 拼接策略提示
+            updated_control_prompt = apply_prompt_strategy(control_prompt, prompt_strategy)
+            updated_treatment_prompt = apply_prompt_strategy(treatment_prompt, prompt_strategy)
+            
+################ PRPOMPT STRATEGY ####################### 更新模板中的 <prompt> 内容
+            control_template._data.find("prompt").text = updated_control_prompt
+            treatment_template._data.find("prompt").text = updated_treatment_prompt
+################ PRPOMPT STRATEGY ####################### 添加到测试集
             test_cases.append(
                 TestCase(
                     bias=row["bias"],
-                    control=Template(row["raw_control"]),
-                    treatment=Template(row["raw_treatment"]),
+                    control=control_template,
+                    treatment=treatment_template,
                     generator=row["generator"],
                     temperature=row["temperature"],
                     seed=row["seed"],
@@ -136,6 +168,10 @@ def decide_batch(batch: pd.DataFrame, model_name: str, randomly_flip_options: bo
 
         # Store all the results (both failed and completed) in a new DataFrame
         decision_df = convert_decisions(ids, decision_results)
+
+################ 3.PRPOMPT STRATEGY ####################### 添加 prompt_strategy 信息
+        # 添加 prompt_strategy 信息
+        decision_df["prompt_strategy"] = prompt_strategy
 
         # Get indices of the decisions that failed: they have status "ERROR"
         failed_idx = [i for i, decision_result in enumerate(decision_results) if decision_result.STATUS == "ERROR"]
@@ -167,8 +203,9 @@ def decide_batch(batch: pd.DataFrame, model_name: str, randomly_flip_options: bo
     file_name = os.path.join(DECISION_RESULTS, model_name, f"batch_{os.getpid()}_decided_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv")
     decision_batch.to_csv(file_name, index=False)
 
-
-def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_workers: int, randomly_flip_options: bool, shuffle_answer_options: bool, temperature: float, seed: int):
+################ PRPOMPT STRATEGY ####################### 加入 prompt_strategy变量
+def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_workers: int, randomly_flip_options: bool, shuffle_answer_options: bool, temperature: float, seed: int
+                   ,prompt_strategy: str):
     """
     Function that encapsulates the parallel decision-making process for a dataset.
 
@@ -236,6 +273,8 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
                     shuffle_answer_options=shuffle_answer_options,
                     temperature=temperature,
                     seed=seed,
+################ PRPOMPT STRATEGY ####################### 输入 prompt_strategy变量
+                    prompt_strategy=prompt_strategy,
                     progress_bar=progress_bar
                 )
     else:
@@ -248,6 +287,8 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
             randomly_flip_options=randomly_flip_options,
             shuffle_answer_options=shuffle_answer_options,
             temperature=temperature,
+################ PRPOMPT STRATEGY ####################### 输入 prompt_strategy变量
+            prompt_strategy=prompt_strategy,
             seed=seed
         )
 
@@ -259,9 +300,79 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
         )
 
 
-
+##################################### 我在这里加了个尾巴“30”来区分不同数据集
     # Merge all batch results into a single CSV containing all decision results of the model
-    merge_datasets(results_directory, DECISION_RESULTS, f"{model_name}.csv", add_id=False)
+    merge_datasets(results_directory, DECISION_RESULTS, f"{model_name}_{prompt_strategy}_30.csv", add_id=False)
+
+################ PRPOMPT STRATEGY ####################### apply_prompt_strategy函数
+def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
+    # 通用结尾提示：允许解释，但要求明确输出格式
+    ending = (
+        "\nPlease ensure your final response ends with the format: Option X"
+    )
+
+    if strategy == "zero-shot":
+        return base_prompt + ending
+
+################ PRPOMPT STRATEGY ####################### apply_prompt_strategy函数
+def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
+    # 格式统一提示（无解释性干预）
+    format_ending = "\nPlease ensure your final response ends with the format: Option X"
+
+    if strategy == "zero-shot":
+        # return base_prompt + format_ending
+        return base_prompt
+
+################ PRPOMPT STRATEGY ####################### 这些例子来自于ID: 433, 912, 845
+    elif strategy == "few-shot":
+        few_shot_examples = (
+            "Example 1:\n"
+            "Situation 1: You are a quality control manager. The prompt asks: 'Do you intend to allocate more than 49% for quality approval?'\n"
+            "Situation 2: You are asked to choose a percentage of products that must meet quality standards to approve a batch (no number suggested).\n"
+            "Note: The number in Situation 1 may act as an anchor.\n"
+            "Instruction: These two situations describe the same decision. Your answer should be the same.\n\n"
+
+            "Example 2:\n"
+            "Situation 1: You are deciding how much support time to allocate to a new ticketing system (no hints).\n"
+            "Situation 2: The prompt includes: 'Do you intend to allocate more than 58%?'\n"
+            "Note: Situation 2 introduces a numerical anchor.\n"
+            "Instruction: Your decision should be based on operational needs, not the number. Answer consistently.\n\n"
+
+            "Example 3:\n"
+            "Situation 1: You are a claims manager allocating reserve funds for a disputed insurance case.\n"
+            "Situation 2: The prompt adds: 'Do you intend to allocate more than 41%?'\n"
+            "Note: The phrasing in Situation 2 may cause anchoring bias.\n"
+            "Instruction: Both situations require the same judgment. Provide the same answer.\n\n"
+
+            "Now consider the following situation:\n"
+        )
+        return few_shot_examples + base_prompt + format_ending
+
+    elif strategy == "cot":
+        return (
+            base_prompt
+            + "\nPlease think step by step before answering."
+            + format_ending
+        )
+
+    elif strategy == "pot":
+        return (
+            base_prompt
+            + "\nDescribe your decision-making process before choosing the answer."
+            + format_ending
+        )
+
+    elif strategy == "reflection":
+        return (
+            base_prompt
+            + "\nBefore finalizing your answer, reflect on whether any Anchoring Biases might have influenced your choice."
+            + format_ending
+        )
+
+    else:
+        return base_prompt + format_ending  # fallback
+
+
 
 
 def main():
@@ -271,6 +382,13 @@ def main():
 
     # Define a command line argument parser
     parser = argparse.ArgumentParser(description="This script obtains decisions from models for generated test case instances.")
+################ PRPOMPT STRATEGY ####################### 命令行输入prompt_strategy变量
+    parser.add_argument(
+    "--prompt_strategy",
+    type=str,
+    choices=["zero-shot", "few-shot", "cot", "pot", "reflection"],
+    default="zero-shot",
+    help="The prompt engineering strategy to apply")
     parser.add_argument("--dataset", type=str, help="The path to the dataset file with the test case instances.", default=DATASET_FILE_PATH)
     parser.add_argument("--model", type=str, help="The name of the model to obtain decisions from.", default="GPT-4o-Mini")
     parser.add_argument("--n_workers", type=int, help="The maximum number of parallel workers obtaining decisions from the model.", default=100)
@@ -283,7 +401,7 @@ def main():
     dataset = pd.read_csv(args.dataset)
 
     # Obtain decisions from the model for all test case instances in the dataset
-    print("Starting the decision-making process with {args.n_workers} parallel workers ...")
+    print(f"Starting the decision-making process with {args.n_workers} parallel workers ...")
     start_time = datetime.datetime.now()
     decide_dataset(
         dataset=dataset,
@@ -294,6 +412,8 @@ def main():
         shuffle_answer_options=False,
         temperature=0.0,
         seed=42,
+################ PRPOMPT STRATEGY ####################### 输入prompt_strategy变量
+        prompt_strategy=args.prompt_strategy
     )
     print(f"All decisions obtained from model '{args.model}' in {datetime.datetime.now() - start_time} seconds.")
 
