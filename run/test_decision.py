@@ -22,9 +22,9 @@ import argparse
 
 
 # References to relevant data directories
-DATASET_FILE_PATH = os.path.join(".", "data", "full_dataset.csv")
+# DATASET_FILE_PATH = os.path.join(".", "data", "full_dataset.csv")
 # DATASET_FILE_PATH = os.path.join(".", "data", "first_1000_rows.csv")
-# DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
+DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
 
 
 DECISION_RESULTS = os.path.join(".", "data", "decision_results")
