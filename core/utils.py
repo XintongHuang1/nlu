@@ -101,9 +101,9 @@ def get_model(model_name: str, randomly_flip_options: bool = False, shuffle_answ
         A LLM object for the specified model.
     """
 
-    if model_name not in SUPPORTED_MODELS:
-        raise ValueError(f"Model '{model_name}' is not supported. Please choose one of: {SUPPORTED_MODELS}")
-    
+    if not model_name.startswith("ft:") and model_name not in SUPPORTED_MODELS:
+      raise ValueError(f"Model '{model_name}' is not supported.")
+
     if model_name == "GPT-4o":
         from models.OpenAI.model import GptFourO
         return GptFourO(randomly_flip_options, shuffle_answer_options)
