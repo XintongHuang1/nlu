@@ -22,8 +22,6 @@ build/
 
 dist/
 
-gpt-3.5-turbo/
+ft_gpt-4o-*/
 
-GPT-4o-Mini/
-
-ft_gpt-4o-mini-2024-07-18_nluproject__BKa5RR8S/
+GPT-4o-Mini_*/

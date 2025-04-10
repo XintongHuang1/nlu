@@ -20,11 +20,18 @@ from tqdm.contrib.concurrent import process_map
 
 import argparse
 
+############################# 文件格式修改 #############################
+# 格式化的开始时间
+START_TIME = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
 # References to relevant data directories
 # DATASET_FILE_PATH = os.path.join(".", "data", "full_dataset.csv")
-DATASET_FILE_PATH = os.path.join(".", "data", "first_1000_rows.csv")
-# DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
+
+# DATASET_FILE_PATH = os.path.join(".", "data", "first_1000_rows.csv")
+# N_data = 1000
+
+DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
+N_data = 30
 
 
 DECISION_RESULTS = os.path.join(".", "data", "decision_results")
@@ -200,7 +207,9 @@ def decide_batch(batch: pd.DataFrame, model_name: str, randomly_flip_options: bo
         )
     
     # Save the decisions for the batch to a CSV file with a unique name based on the process ID and timestamp
-    file_name = os.path.join(DECISION_RESULTS, safe_filename(model_name), f"batch_{os.getpid()}_decided_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv")
+############################# 文件格式修改 #############################
+    model_time_file = f"{safe_filename(model_name)}_{START_TIME}"
+    file_name = os.path.join(DECISION_RESULTS, model_time_file, f"batch_{os.getpid()}_decided_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv")
     decision_batch.to_csv(file_name, index=False)
     # file_name = f"batch_{os.getpid()}_decided_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
     # file_path = os.path.join(DECISION_RESULTS, safe_filename(model_name), safe_filename(file_name))
@@ -230,7 +239,9 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
     """
 
     # Prepare the directory to store the decision results of the model
-    results_directory = os.path.join(DECISION_RESULTS, safe_filename(model_name))
+############################# 文件格式修改 #############################
+    model_time_file = f"{safe_filename(model_name)}_{START_TIME}"
+    results_directory = os.path.join(DECISION_RESULTS, model_time_file)
     os.makedirs(results_directory, exist_ok=True)
 
     # Split the dataset into equally-sized batches for distribution across the parallel workers
@@ -292,7 +303,7 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
 
         decide_batch_partial = partial(
             decide_batch,
-            model_name=safe_filename(model_name),
+            model_name=model_name,
             randomly_flip_options=randomly_flip_options,
             shuffle_answer_options=shuffle_answer_options,
             temperature=temperature,
@@ -311,7 +322,7 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
 
 
     # Merge all batch results into a single CSV containing all decision results of the model
-    merge_datasets(results_directory, DECISION_RESULTS, f"{safe_filename(model_name)}_{prompt_strategy}_{1000}.csv", add_id=False)
+    merge_datasets(results_directory, DECISION_RESULTS, f"{safe_filename(model_name)}_{prompt_strategy}_{N_data}_seed{seed}_{START_TIME}.csv", add_id=False)
 
 ################ PRPOMPT STRATEGY ####################### apply_prompt_strategy函数
 def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
