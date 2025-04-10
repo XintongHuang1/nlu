@@ -300,19 +300,9 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
         )
 
 
-##################################### 我在这里加了个尾巴“30”来区分不同数据集
+
     # Merge all batch results into a single CSV containing all decision results of the model
-    merge_datasets(results_directory, DECISION_RESULTS, f"{model_name}_{prompt_strategy}_30.csv", add_id=False)
-
-################ PRPOMPT STRATEGY ####################### apply_prompt_strategy函数
-def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
-    # 通用结尾提示：允许解释，但要求明确输出格式
-    ending = (
-        "\nPlease ensure your final response ends with the format: Option X"
-    )
-
-    if strategy == "zero-shot":
-        return base_prompt + ending
+    merge_datasets(results_directory, DECISION_RESULTS, f"{model_name}_{prompt_strategy}_{30}.csv", add_id=False)
 
 ################ PRPOMPT STRATEGY ####################### apply_prompt_strategy函数
 def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
@@ -320,8 +310,7 @@ def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
     format_ending = "\nPlease ensure your final response ends with the format: Option X"
 
     if strategy == "zero-shot":
-        # return base_prompt + format_ending
-        return base_prompt
+        return base_prompt + format_ending
 
 ################ PRPOMPT STRATEGY ####################### 这些例子来自于ID: 433, 912, 845
     elif strategy == "few-shot":
@@ -371,9 +360,6 @@ def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
 
     else:
         return base_prompt + format_ending  # fallback
-
-
-
 
 def main():
     """
