@@ -13,6 +13,10 @@ DATASETS_PATH = os.path.join(".", "data", "generated_datasets")
 FINAL_DATASET_PATH = os.path.join(".", "data")
 FINAL_DATASET_FILENAME = "full_dataset.csv"
 
+import re
+def safe_filename(name):
+    """将路径中的非法字符替换为下划线"""
+    return re.sub(r'[<>:"/\\|?*]', '_', name)
 
 def merge_datasets(datasets_directory: str, output_directory: str, file_name: str, add_id: bool = True) -> pd.DataFrame:
     """
@@ -24,7 +28,8 @@ def merge_datasets(datasets_directory: str, output_directory: str, file_name: st
         file_name (str): The name of the file to save the dataset as (must end with .csv).
         add_id (bool): Whether to add an 'id' column with unique IDs for each row.
     """
-
+    # output_directory = safe_filename(output_directory)
+    # file_name = safe_filename(file_name)
     # Create the directory, if it does not yet exist
     os.makedirs(output_directory, exist_ok=True)
 

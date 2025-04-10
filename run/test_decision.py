@@ -23,8 +23,8 @@ import argparse
 
 # References to relevant data directories
 # DATASET_FILE_PATH = os.path.join(".", "data", "full_dataset.csv")
-# DATASET_FILE_PATH = os.path.join(".", "data", "first_1000_rows.csv")
-DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
+DATASET_FILE_PATH = os.path.join(".", "data", "first_1000_rows.csv")
+# DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
 
 
 DECISION_RESULTS = os.path.join(".", "data", "decision_results")
@@ -200,8 +200,17 @@ def decide_batch(batch: pd.DataFrame, model_name: str, randomly_flip_options: bo
         )
     
     # Save the decisions for the batch to a CSV file with a unique name based on the process ID and timestamp
-    file_name = os.path.join(DECISION_RESULTS, model_name, f"batch_{os.getpid()}_decided_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv")
+    file_name = os.path.join(DECISION_RESULTS, safe_filename(model_name), f"batch_{os.getpid()}_decided_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv")
     decision_batch.to_csv(file_name, index=False)
+    # file_name = f"batch_{os.getpid()}_decided_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
+    # file_path = os.path.join(DECISION_RESULTS, safe_filename(model_name), safe_filename(file_name))
+    # decision_batch.to_csv(file_path, index=False)
+
+import re
+
+def safe_filename(name):
+    """将路径中的非法字符替换为下划线"""
+    return re.sub(r'[<>:"|?*]', '_', name)
 
 ################ PRPOMPT STRATEGY ####################### 加入 prompt_strategy变量
 def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_workers: int, randomly_flip_options: bool, shuffle_answer_options: bool, temperature: float, seed: int
@@ -221,7 +230,7 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
     """
 
     # Prepare the directory to store the decision results of the model
-    results_directory = os.path.join(DECISION_RESULTS, model_name)
+    results_directory = os.path.join(DECISION_RESULTS, safe_filename(model_name))
     os.makedirs(results_directory, exist_ok=True)
 
     # Split the dataset into equally-sized batches for distribution across the parallel workers
@@ -283,7 +292,7 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
 
         decide_batch_partial = partial(
             decide_batch,
-            model_name=model_name,
+            model_name=safe_filename(model_name),
             randomly_flip_options=randomly_flip_options,
             shuffle_answer_options=shuffle_answer_options,
             temperature=temperature,
@@ -302,7 +311,7 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
 
 
     # Merge all batch results into a single CSV containing all decision results of the model
-    merge_datasets(results_directory, DECISION_RESULTS, f"{model_name}_{prompt_strategy}_{30}.csv", add_id=False)
+    merge_datasets(results_directory, DECISION_RESULTS, f"{safe_filename(model_name)}_{prompt_strategy}_{1000}.csv", add_id=False)
 
 ################ PRPOMPT STRATEGY ####################### apply_prompt_strategy函数
 def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
@@ -357,7 +366,14 @@ def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
             + "\nBefore finalizing your answer, reflect on whether any Anchoring Biases might have influenced your choice."
             + format_ending
         )
-
+    elif strategy == "debias-rewrite":
+        return (
+            base_prompt
+            + "\n\nFirst, identify whether the following question contains any anchoring cues (such as specific numbers or suggestive phrasing)."
+            + "\nThen, rewrite the question in a neutral way that removes any anchoring influence."
+            + "\nFinally, answer the rewritten question with your chosen option."
+            + "\nPlease ensure your final response ends with the format: Option X"
+        )
     else:
         return base_prompt + format_ending  # fallback
 
@@ -372,7 +388,7 @@ def main():
     parser.add_argument(
     "--prompt_strategy",
     type=str,
-    choices=["zero-shot", "few-shot", "cot", "pot", "reflection"],
+    choices=["zero-shot", "few-shot", "cot", "pot", "reflection","debias-rewrite"],
     default="zero-shot",
     help="The prompt engineering strategy to apply")
     parser.add_argument("--dataset", type=str, help="The path to the dataset file with the test case instances.", default=DATASET_FILE_PATH)
