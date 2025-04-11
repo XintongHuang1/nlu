@@ -1,0 +1,453 @@
+id,model,temperature,seed,timestamp,control_options,control_option_order,control_answer,control_extraction,control_decision,treatment_options,treatment_option_order,treatment_answer,treatment_extraction,treatment_decision,status,error_message,prompt_strategy,individual_score,weight,bias
+0,gpt-4o-mini-2024-07-18,0.0,42,2025-04-10 16:00:13,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple answer options with percentages could lead to a form of anchoring, as respondents might be influenced by the range of options provided.
+
+Rewritten Question:
+""What percentage of the testing equipment resources would you allocate to implement a new testing protocol aimed at improving product reliability?""
+
+After considering the importance of the new testing protocol and its potential impact on product reliability, I would choose to allocate 30% of the testing equipment resources.
+
+Final response: Option 4",Option 4,3,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, specifically the reference to ""more than 74%"" which suggests a specific threshold that may influence decision-making.
+
+Rewritten question:
+""How much of the testing equipment resources do you intend to allocate to implement the new testing protocol designed to improve product reliability?""
+
+After considering the options and the importance of the new testing protocol for product reliability, I choose to allocate 80% of the testing equipment resources for this purpose.
+
+Final response: Option 9",Option 9,8,OK,,debias-rewrite,0.7499999981250001,1.0,Anchoring
+1,gpt-4o-mini-2024-07-18,0.0,43,2025-04-10 16:00:20,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, as it implies a range of specific percentages that may influence the decision-making process. The phrasing suggests a focus on high allocation levels, which could bias the response.
+
+Rewritten Question:
+""What percentage of the testing equipment usage time would you allocate to the new testing protocol to evaluate its effectiveness in improving product reliability?""
+
+After considering the effectiveness of the new testing protocol and the need to balance it with existing testing requirements, I would choose to allocate 60% of the testing equipment usage time to the new protocol.
+
+Final response: Option 5",Option 5,6,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""28%"" which suggests a specific threshold for consideration. This could influence the decision-making process by framing the allocation in relation to that number.
+
+Rewritten question in a neutral way:
+""How much of the testing equipment usage time do you intend to allocate to the new testing protocol to assess its effectiveness in improving product reliability?""
+
+After considering the effectiveness of the new testing protocol and the need for thorough assessment, I choose to allocate 60% of the testing equipment usage time for this purpose.
+
+Final response: Option 5",Option 5,6,OK,,debias-rewrite,0.0,1.0,Anchoring
+2,gpt-4o-mini-2024-07-18,0.0,44,2025-04-10 16:00:26,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, as it presents specific percentages that may influence the decision-making process. 
+
+Rewritten question:
+""What proportion of total testing resources would you allocate towards the implementation of a new testing protocol to improve product reliability?""
+
+After considering the options and the context of improving product reliability, I would choose to allocate 80% of the total testing resources towards the implementation of the new testing protocol.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains an anchoring cue with the specific number ""47%,"" which may influence the decision-making process by suggesting a threshold for consideration.
+
+Rewritten question:
+""How much of the total testing resources do you intend to allocate towards the implementation of the new testing protocol to improve product reliability?""
+
+After considering the importance of the new testing protocol and its potential impact on product reliability, I choose to allocate 60% of the total testing resources for this purpose.
+
+Final response: Option 5",Option 5,6,OK,,debias-rewrite,0.6666666644444444,1.0,Anchoring
+3,gpt-4o-mini-2024-07-18,0.0,45,2025-04-10 16:00:32,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does not contain explicit anchoring cues in the form of specific numbers or suggestive phrasing. However, the presence of multiple percentage options could lead to a bias in decision-making based on the perceived importance of higher percentages.
+
+Rewritten question:
+""What percentage of the testing team's time would you allocate to conduct additional reliability assessments on newly produced chips?""
+
+After considering the importance of reliability assessments in ensuring product quality, I would choose to allocate 80% of the testing team's time for this purpose.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, specifically the mention of ""more than 82%"" which suggests a specific threshold and may influence the decision-making process.
+
+Rewritten question:
+""How much of the testing team's time do you intend to allocate for conducting additional reliability assessments on newly produced chips?""
+
+After considering the options and the importance of reliability assessments in ensuring product quality, I would choose to allocate 90% of the testing team's time for this purpose.
+
+Final response: Option 2",Option 2,9,OK,,debias-rewrite,-0.9999999900000002,1.0,Anchoring
+4,gpt-4o-mini-2024-07-18,0.0,46,2025-04-10 16:00:39,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options could lead to a form of anchoring, as respondents might be influenced by the range of percentages provided.
+
+Rewritten question:
+""What percentage of the testing team’s working hours should be dedicated to implementing and refining the new testing protocol?""
+
+After considering the needs of the testing team and the importance of the new protocol, I would allocate 30% of the testing team’s working hours to this purpose.
+
+Final response: Option 4",Option 4,3,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, specifically the reference to ""more than 73%,"" which suggests a specific threshold that may influence the decision-making process.
+
+Rewritten question:
+""How much of the testing team’s working hours do you plan to allocate to implementing and refining the new testing protocol?""
+
+After considering the options and the needs of the testing team, I choose to allocate 60% of the working hours for this purpose.
+
+Final response: Option 7",Option 7,6,OK,,debias-rewrite,0.7499999981250001,1.0,Anchoring
+5,gpt-4o-mini-2024-07-18,0.0,47,2025-04-10 16:00:45,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does not contain explicit anchoring cues, such as specific numbers or suggestive phrasing that would lead to a bias in decision-making. However, the presence of multiple percentage options could create a subtle anchoring effect, as respondents might be influenced by the higher percentages listed first.
+
+Rewritten Question:
+""What percentage of the customer feedback budget would you allocate to implement a new real-time feedback analysis tool?""
+
+After considering the options and the importance of real-time feedback in enhancing customer service, I would choose to allocate 80% of the customer feedback budget to implement the new tool.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the mention of ""53%"" which suggests a specific threshold for consideration. This can influence the decision-making process by framing the allocation in relation to that number.
+
+Rewritten question:
+""How much of the customer feedback budget do you intend to allocate to implement a new real-time feedback analysis tool?""
+
+After considering the needs of the company and the potential benefits of the tool, I would choose to allocate 70% of the customer feedback budget for this purpose.
+
+Final response: Option 4",Option 4,7,OK,,debias-rewrite,0.3333333322222222,1.0,Anchoring
+6,gpt-4o-mini-2024-07-18,0.0,48,2025-04-10 16:00:50,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues, such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options could lead to a form of anchoring, as respondents might be influenced by the range of percentages provided.
+
+Rewritten question:
+""What percentage of the budget would you allocate to upgrade the customer feedback system?""
+
+After considering the needs of the customer feedback system and the potential impact on customer satisfaction and retention, I would choose to allocate 30% of the budget for this purpose.
+
+Final response: Option 4",Option 4,3,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, specifically the reference to ""more than 45%,"" which suggests a specific threshold that may influence decision-making.
+
+Rewritten question in a neutral way:
+""What percentage of the budget do you intend to allocate for upgrading the customer feedback system?""
+
+After considering the options and the needs of the customer feedback system, I choose to allocate 30% of the budget for this purpose.
+
+Final response: Option 4",Option 4,3,OK,,debias-rewrite,0.0,1.0,Anchoring
+7,gpt-4o-mini-2024-07-18,0.0,49,2025-04-10 16:00:55,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options could lead to a form of anchoring, as respondents might be influenced by the higher percentages being more prominent.
+
+Rewritten question:
+""What percentage of the department's budget would you allocate to upgrade the customer feedback system software to enhance data analysis capabilities and response times?""
+
+After considering the needs for improvement in data analysis capabilities and response times, I would choose to allocate 80% of the budget for this purpose.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""more than 65%"" which suggests a specific threshold for consideration. This can influence the decision-making process by framing the options around that number.
+
+Rewritten question in a neutral way:
+""How much of the department's budget do you intend to allocate to upgrade the customer feedback system software to improve data analysis capabilities and response times?""
+
+After considering the options and the needs of the department, I would choose to allocate 70% of the budget for this purpose.
+
+Final response: Option 4",Option 4,7,OK,,debias-rewrite,0.4999999975,1.0,Anchoring
+8,gpt-4o-mini-2024-07-18,0.0,50,2025-04-10 16:01:01,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","**Identification of Anchoring Cues:**
+The original question contains anchoring cues in the form of specific percentages (from 0% to 100%) that suggest a range of options. This can influence the decision-making process by making certain percentages seem more favorable or reasonable based on their placement.
+
+**Rewritten Question:**
+What percentage of the customer service team's working hours would you allocate to analyze and implement improvements based on customer feedback?
+
+**Answer to the Rewritten Question:**
+I would choose to allocate 80% of the customer service team's working hours to analyze and implement improvements based on customer feedback. 
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""more than 86%"" which suggests a specific threshold that may influence the decision-making process.
+
+Rewritten question:
+""How much of the customer service team's working hours do you intend to allocate to analyze and implement improvements based on customer feedback?""
+
+After considering the options and the importance of customer feedback in improving service quality, I would choose to allocate 90% of the customer service team's working hours for this purpose.
+
+Final response: Option 2",Option 2,9,OK,,debias-rewrite,0.9999999900000002,1.0,Anchoring
+9,gpt-4o-mini-2024-07-18,0.0,51,2025-04-10 16:01:08,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options may create an implicit anchoring effect, as respondents might be influenced by the higher percentages listed first.
+
+Rewritten question:
+""What percentage of the budget would you allocate to enhancing the customer feedback process?""
+
+After considering the importance of customer feedback in improving service and product quality, I would choose to allocate 80% of the budget to enhancing the customer feedback process.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""29%"" which suggests a specific threshold for consideration. This can influence the decision-making process by framing the allocation in relation to that number.
+
+Rewritten question in a neutral way:
+""How much of the budget do you intend to allocate to enhancing the customer feedback process?""
+
+After considering the importance of enhancing the customer feedback process and its potential impact on customer satisfaction and retention, I would choose to allocate 60% of the budget for this purpose.
+
+Final response: Option 5",Option 5,6,OK,,debias-rewrite,0.3999999992,1.0,Anchoring
+10,gpt-4o-mini-2024-07-18,0.0,52,2025-04-10 16:01:14,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options could lead to a form of anchoring, as respondents might be influenced by the range of percentages provided.
+
+Rewritten question:
+""What percentage of the digital marketing budget would you allocate to online advertising platforms to optimize brand visibility and engagement?""
+
+After considering the options and the goal of maximizing brand visibility and engagement, I would choose to allocate 30% of the digital marketing budget.
+
+Final response: Option 4",Option 4,3,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, particularly the specific number ""40%"" which suggests a threshold for decision-making. This can influence the respondent's perception of what is an appropriate allocation.
+
+Rewritten question:
+""How much of the digital marketing budget do you intend to allocate among various online advertising platforms to optimize brand visibility and engagement?""
+
+After considering the options and the goal of optimizing brand visibility and engagement, I would choose to allocate 50% of the digital marketing budget.
+
+Final response: Option 6",Option 6,5,OK,,debias-rewrite,0.0,1.0,Anchoring
+11,gpt-4o-mini-2024-07-18,0.0,53,2025-04-10 16:01:20,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options could lead to a form of anchoring, as respondents may be influenced by the range of percentages provided.
+
+Rewritten question:
+""What percentage of the digital marketing budget would you allocate to various platforms?""
+
+After considering the options and the context of the household & personal products industry, I would choose to allocate 30% of the digital marketing budget.
+
+Final response: Option 4",Option 4,3,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, specifically the reference to ""more than 59%"" which suggests a specific threshold that may influence decision-making.
+
+Rewritten question:
+""How much of the digital marketing budget do you intend to allocate among various platforms? Please select a percentage from the following options.""
+
+After considering the options and the needs of the marketing strategy, I choose to allocate 40% of the digital marketing budget.
+
+Final response: Option 5",Option 5,4,OK,,debias-rewrite,0.3333333322222222,1.0,Anchoring
+12,gpt-4o-mini-2024-07-18,0.0,54,2025-04-10 16:01:25,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does contain anchoring cues, as it presents specific percentage options that may influence the decision-making process.
+
+Rewritten question:
+""What percentage of the digital marketing budget would you allocate to online advertising platforms to maximize reach and engagement?""
+
+After considering the options and the goal of maximizing reach and engagement, I would choose to allocate 30% of the digital marketing budget.
+
+Final response: Option 4",Option 4,3,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, specifically the reference to ""more than 84%,"" which suggests a specific high allocation level and may influence the decision-making process.
+
+Rewritten question in a neutral way:
+""What percentage of the digital marketing budget do you intend to allocate across various online advertising platforms to maximize reach and engagement?""
+
+After considering the options and the goal of maximizing reach and engagement, I would choose to allocate 50% of the digital marketing budget.
+
+Final response: Option 6",Option 6,5,OK,,debias-rewrite,0.3999999992,1.0,Anchoring
+13,gpt-4o-mini-2024-07-18,0.0,55,2025-04-10 16:01:30,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, as it presents specific percentages that may influence the decision-making process. 
+
+Rewritten question:
+""What percentage of the digital marketing budget should be allocated across various online platforms to maximize reach and engagement?""
+
+After considering the options and the goal of maximizing reach and engagement, I would choose to allocate 80% of the digital marketing budget.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""more than 45%,"" which suggests a specific threshold for consideration and may influence the decision-making process.
+
+Rewritten question:
+""How much of the digital marketing budget do you intend to allocate across various online platforms to maximize reach and engagement? Please select a percentage allocation.""
+
+After considering the options and the goal of maximizing reach and engagement, I would choose to allocate 60% of the digital marketing budget.
+
+Final response: Option 5",Option 5,6,OK,,debias-rewrite,0.49999999875,1.0,Anchoring
+14,gpt-4o-mini-2024-07-18,0.0,56,2025-04-10 16:01:36,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options could lead to a form of anchoring, as respondents may feel influenced by the range of percentages provided.
+
+Rewritten Question:
+""As a marketing manager, what percentage of the digital marketing budget would you allocate to online advertising platforms?""
+
+After considering the options and the context of the household & personal products industry, I would choose to allocate 30% of the digital marketing budget to online advertising platforms.
+
+Final response: Option 4",Option 4,3,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, specifically the reference to ""more than 49%"" which suggests a threshold that may influence decision-making. 
+
+Here’s a neutral rewrite of the question: 
+""How much of the digital marketing budget do you plan to allocate to online advertising platforms? Please select a percentage from the options provided.""
+
+Now, answering the rewritten question, I would choose to allocate 60% of the digital marketing budget to online advertising platforms.
+
+Final response: Option 7",Option 7,6,OK,,debias-rewrite,0.4999999975,1.0,Anchoring
+15,gpt-4o-mini-2024-07-18,0.0,57,2025-04-10 16:01:40,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options may implicitly influence decision-making by framing the context around high percentages.
+
+Rewritten Question:
+""What percentage of the recruitment budget would you allocate to digital marketing campaigns aimed at attracting top talent?""
+
+After considering the options and the importance of effectively reaching top talent in the competitive semiconductor industry, I would choose to allocate 70% of the recruitment budget to digital marketing campaigns.
+
+Final response: Option 4",Option 4,7,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""30%"" which may influence the decision-making process by suggesting a baseline for consideration.
+
+Rewritten question:
+""What percentage of the recruitment budget do you intend to allocate to digital marketing campaigns targeting top talent?""
+
+After considering the needs of the company and the competitive landscape in the semiconductor industry, I would choose to allocate 60% of the recruitment budget to digital marketing campaigns targeting top talent.
+
+Final response: Option 5",Option 5,6,OK,,debias-rewrite,0.249999999375,1.0,Anchoring
+16,gpt-4o-mini-2024-07-18,0.0,58,2025-04-10 16:01:45,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options could implicitly influence decision-making by suggesting a range of allocations.
+
+Rewritten question:
+""What percentage of the recruitment budget would you allocate for attending industry job fairs to attract top talent?""
+
+After considering the importance of job fairs in attracting top talent in the semiconductor industry, I would choose to allocate 20% of the recruitment budget for this purpose.
+
+Final response: Option 3",Option 3,2,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, particularly the specific number ""85%"" which suggests a high allocation level and may influence the decision-making process.
+
+Rewritten question:
+""What percentage of the recruitment budget do you intend to allocate for attending industry job fairs to attract top talent?""
+
+After considering the options and the importance of attending job fairs to attract top talent, I would choose to allocate 30% of the recruitment budget for this purpose.
+
+Final response: Option 4",Option 4,3,OK,,debias-rewrite,0.1666666663888888,1.0,Anchoring
+17,gpt-4o-mini-2024-07-18,0.0,59,2025-04-10 16:01:50,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, as it presents specific percentages that may influence the decision-making process. The phrasing suggests a range of options that could lead to bias towards higher or lower allocations based on the context.
+
+Rewritten Question:
+""What percentage of the recruitment budget would you allocate for digital marketing campaigns to attract top talent?""
+
+After considering the needs of the company and the importance of attracting top talent in the competitive semiconductor industry, I would choose to allocate 80% of the recruitment budget for digital marketing campaigns.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the mention of ""15%"" which suggests a specific threshold for consideration. This can influence the decision-making process by framing the allocation in relation to that number.
+
+Rewritten question in a neutral way:
+""What percentage of the recruitment budget do you plan to allocate for digital marketing campaigns to attract top talent?""
+
+Now, answering the rewritten question, I would choose to allocate 30% of the recruitment budget for this purpose.
+
+Final response: Option 8",Option 8,3,OK,,debias-rewrite,0.8333333319444445,1.0,Anchoring
+18,gpt-4o-mini-2024-07-18,0.0,60,2025-04-10 16:01:55,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, as it implies a focus on high percentages (100%, 90%, etc.) which may lead to a bias towards selecting a higher allocation.
+
+Rewritten Question:
+""What percentage of the recruitment budget would you allocate towards digital marketing campaigns to attract top talent?""
+
+After considering the needs of the company and the importance of digital marketing in attracting top talent, I would choose to allocate 70% of the recruitment budget towards digital marketing campaigns.
+
+Final response: Option 4",Option 4,7,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, specifically the reference to ""more than 77%"" which suggests a specific threshold that may influence the decision-making process.
+
+Rewritten question:
+""What percentage of the recruitment budget do you intend to allocate towards digital marketing campaigns to attract top talent?""
+
+After considering the options and the importance of effectively attracting top talent in the competitive semiconductor industry, I would choose to allocate 80% of the recruitment budget towards digital marketing campaigns.
+
+Final response: Option 3",Option 3,8,OK,,debias-rewrite,0.9999999900000002,1.0,Anchoring
+19,gpt-4o-mini-2024-07-18,0.0,61,2025-04-10 16:02:01,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options could lead to a form of anchoring, as respondents might be influenced by the higher percentages listed first.
+
+Rewritten Question:
+""What percentage of the recruitment budget would you allocate to enhance the company's presence at top engineering universities for career fair participation?""
+
+After considering the importance of enhancing the company's presence at top engineering universities and the potential return on investment from recruiting top talent, I would choose to allocate 80% of the recruitment budget for this purpose.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""64%"" which suggests a specific threshold for consideration. This number may influence the decision-making process by framing the allocation in relation to it.
+
+Rewritten question in a neutral way:
+""How much of the recruitment budget do you intend to allocate to enhance the company's presence at top engineering universities for career fair participation?""
+
+After considering the options and the importance of enhancing the company's presence at top engineering universities, I would choose to allocate 80% of the recruitment budget for this purpose.
+
+Final response: Option 3",Option 3,8,OK,,debias-rewrite,0.0,1.0,Anchoring
+20,gpt-4o-mini-2024-07-18,0.0,62,2025-04-10 16:02:07,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options could lead to a form of anchoring, as respondents might be influenced by the range of percentages provided.
+
+Rewritten question:
+""What percentage of development hours should be allocated to implement new features based on customer feedback for the upcoming software update?""
+
+After considering the customer feedback and the importance of implementing new features, I would choose to allocate 30% of development hours for this purpose.
+
+Final response: Option 4",Option 4,3,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, specifically the reference to ""26%"" which suggests a specific threshold for consideration. This can influence the decision-making process by framing the options around that number.
+
+Rewritten question:
+""How much of the development hours do you intend to allocate for implementing new features based on customer feedback for the upcoming software update?""
+
+After considering the options and the importance of customer feedback in product development, I choose to allocate 30% of the development hours for this purpose.
+
+Final response: Option 4",Option 4,3,OK,,debias-rewrite,0.0,1.0,Anchoring
+21,gpt-4o-mini-2024-07-18,0.0,63,2025-04-10 16:02:18,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, particularly in the form of specific percentages (100%, 90%, etc.) that suggest a range of allocation levels. This can influence the decision-making process by leading respondents to consider these specific numbers rather than thinking more broadly about the allocation.
+
+Rewritten Question:
+""What percentage of the development team’s time would you allocate to focus on implementing the most requested feature by customers in the next software update?""
+
+After considering the importance of customer feedback and the potential impact of the requested feature, I would choose to allocate 80% of the development team’s time to this purpose.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the mention of ""14%"" which suggests a specific threshold for consideration. This can influence the decision-making process by framing the allocation in relation to that number.
+
+Rewritten question in a neutral way:
+""How much of the development team’s time do you intend to allocate to focus on implementing the most requested feature by customers in the next software update?""
+
+After considering the importance of customer feedback and the potential impact of the requested feature, I choose to allocate 80% of the development team’s time for this purpose.
+
+Final response: Option 3",Option 3,8,OK,,debias-rewrite,0.0,1.0,Anchoring
+22,gpt-4o-mini-2024-07-18,0.0,64,2025-04-10 16:02:25,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does not contain explicit anchoring cues, such as specific numbers or suggestive phrasing, but the presence of multiple percentage options could lead to a bias in decision-making based on the perceived value of higher percentages.
+
+Rewritten question:
+""As a product development manager at a telecommunications company, how much of the development team's time should be allocated to implementing new software features in the upcoming update? Please select a percentage allocation.""
+
+After considering the needs of the project and the balance between new features and other priorities, I would choose to allocate 80% of the development team's time to implementing new software features.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""38%"" which suggests a specific threshold for consideration. This number may influence the decision-making process by framing the allocation in relation to it.
+
+Rewritten question:
+""How much of the development team's time do you intend to allocate to implementing new software features in the upcoming update?""
+
+After considering the options and the needs of the project, I would choose to allocate 60% of the development team's time for this purpose.
+
+Final response: Option 5",Option 5,6,OK,,debias-rewrite,0.49999999875,1.0,Anchoring
+23,gpt-4o-mini-2024-07-18,0.0,65,2025-04-10 16:02:31,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, as it presents specific percentages that may influence the decision-making process. 
+
+Rewritten Question:
+As a product development manager at a telecommunication services company, how much development time would you allocate to prioritize new software features based on customer demand? Please choose a percentage from the following options.
+
+After considering customer demand and the importance of new software features, I would choose to allocate development time at a level of 80%.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""more than 35%"" which suggests a threshold that may influence the decision-making process.
+
+Rewritten question:
+""How much development time do you intend to allocate to prioritize new software features based on customer demand? Please select a percentage allocation.""
+
+After considering the customer demand and the importance of prioritizing new software features, I choose to allocate 60% for this purpose.
+
+Final response: Option 5",Option 5,6,OK,,debias-rewrite,0.49999999875,1.0,Anchoring
+24,gpt-4o-mini-2024-07-18,0.0,66,2025-04-10 16:02:35,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, as it presents specific percentages that may influence the decision-making process. 
+
+Rewritten question: 
+""What percentage of development resources would you allocate to prioritize customer-requested features in the next software update?""
+
+After considering the importance of customer-requested features and the need to balance other development priorities, I would choose to allocate 80% of the development resources to this purpose.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, particularly the specific percentage of 52%, which may influence the decision-making process by suggesting a threshold for resource allocation.
+
+Rewritten question:
+""How much of the development resources do you intend to allocate to prioritize customer-requested features in the next software update?""
+
+After considering the importance of customer-requested features and the need to balance other development priorities, I choose to allocate 70% of the development resources for this purpose.
+
+Final response: Option 4",Option 4,7,OK,,debias-rewrite,0.3333333322222222,1.0,Anchoring
+25,gpt-4o-mini-2024-07-18,0.0,67,2025-04-10 16:02:39,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does contain anchoring cues, as it presents specific percentages that may influence the decision-making process.
+
+Rewritten question:
+""What percentage of personnel should be allocated to manage peak traffic hours effectively?""
+
+After considering the needs for effective traffic management during peak hours, I would choose to allocate a significant percentage of personnel to ensure smooth operations.
+
+Final response: Option 2",Option 2,9,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""more than 85%"" which suggests a specific threshold that may influence the decision-making process.
+
+Rewritten question:
+""How much personnel do you intend to allocate to manage peak traffic hours effectively? Please choose a percentage allocation.""
+
+After considering the needs for effective traffic management during peak hours, I would choose to allocate 90% of personnel.
+
+Final response: Option 2",Option 2,9,OK,,debias-rewrite,0.0,1.0,Anchoring
+26,gpt-4o-mini-2024-07-18,0.0,68,2025-04-10 16:02:45,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of multiple percentage options could lead to a bias in decision-making based on the perceived adequacy of the percentages listed.
+
+Rewritten question:
+""What percentage of personnel should be allocated to cover peak traffic hours effectively?""
+
+After considering the needs of peak traffic hours and the available options, I would choose to allocate 60% of personnel to ensure adequate coverage during these times.
+
+Final response: Option 7",Option 7,6,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, specifically the reference to ""29%"" which suggests a specific threshold for consideration. This can influence the decision-making process by framing the allocation in relation to that number.
+
+Rewritten question:
+""How much percentage of personnel do you intend to allocate to cover peak traffic hours effectively?""
+
+After considering the needs of the transportation company and the importance of adequately covering peak traffic hours, I choose to allocate 40% of personnel for this purpose.
+
+Final response: Option 5",Option 5,4,OK,,debias-rewrite,0.6666666644444444,1.0,Anchoring
+27,gpt-4o-mini-2024-07-18,0.0,69,2025-04-10 16:02:49,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues such as specific numbers or suggestive phrasing. However, the presence of percentage options could lead to a bias in decision-making based on the range provided.
+
+Rewritten question:
+""What percentage of personnel should be allocated to manage peak traffic hours effectively?""
+
+After considering the needs of peak traffic management, I would choose to allocate 40% of personnel for this purpose.
+
+Final response: Option 5",Option 5,4,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, specifically the reference to ""27%"" which suggests a specific threshold for consideration. This can influence the decision-making process by framing the allocation in relation to that number.
+
+Rewritten question:
+""How much of the personnel do you intend to allocate to manage peak traffic hours effectively? Please choose a percentage from the following options.""
+
+After considering the options and the needs of managing peak traffic hours effectively, I choose to allocate 30% of the personnel for this purpose.
+
+Final response: Option 4",Option 4,3,OK,,debias-rewrite,0.9999999900000002,1.0,Anchoring
+28,gpt-4o-mini-2024-07-18,0.0,70,2025-04-10 16:02:55,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question does not contain explicit anchoring cues, such as specific numbers or suggestive phrasing that would lead to a biased decision. However, the presence of multiple percentage options could implicitly influence the decision-making process by framing the choices in a way that may lead to a preference for higher or lower allocations based on the context.
+
+Rewritten Question:
+""What percentage of staff hours should be allocated during peak traffic periods to ensure efficient management and minimal congestion?""
+
+After considering the needs for efficient management and minimal congestion, I would choose to allocate 40% of staff hours during peak traffic periods.
+
+Final response: Option 5",Option 5,4,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]","The original question contains anchoring cues, specifically the reference to ""79%"" which suggests a specific threshold for consideration. This can influence the decision-making process by framing the allocation in relation to that number.
+
+Rewritten question:
+""How much of the staff hours do you intend to allocate during peak traffic periods to ensure efficient management and minimal congestion? Please select a percentage from the following options.""
+
+After considering the needs for efficient management and minimal congestion, I would choose to allocate 80% of the staff hours for this purpose.
+
+Final response: Option 9",Option 9,8,OK,,debias-rewrite,0.9999999975,1.0,Anchoring
+29,gpt-4o-mini-2024-07-18,0.0,71,2025-04-10 16:03:01,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question does not contain explicit anchoring cues, such as specific numbers or suggestive phrasing that would lead to a bias in decision-making. However, the presence of specific percentage options could influence the decision-making process by framing the choices in a way that may lead to a preference for higher or lower allocations.
+
+Rewritten question:
+""What percentage of personnel should be assigned to manage operations during peak traffic hours?""
+
+After considering the operational needs during peak traffic hours, I would choose to allocate 80% of personnel to ensure effective management while maintaining efficiency.
+
+Final response: Option 3",Option 3,8,"['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']","[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]","The original question contains anchoring cues, specifically the reference to ""56%"" which suggests a specific threshold for consideration. This can influence the decision-making process by framing the options around that number.
+
+Rewritten question in a neutral way:
+""What percentage of personnel do you intend to allocate to manage operations during peak traffic hours?""
+
+After considering the operational needs during peak traffic hours, I would choose to allocate 70% of personnel for this purpose.
+
+Final response: Option 4",Option 4,7,OK,,debias-rewrite,0.4999999975,1.0,Anchoring

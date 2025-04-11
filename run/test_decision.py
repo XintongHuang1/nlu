@@ -27,11 +27,11 @@ START_TIME = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 # References to relevant data directories
 # DATASET_FILE_PATH = os.path.join(".", "data", "full_dataset.csv")
 
-# DATASET_FILE_PATH = os.path.join(".", "data", "first_1000_rows.csv")
-# N_data = 1000
+DATASET_FILE_PATH = os.path.join(".", "data", "first_1000_rows.csv")
+N_data = 1000
 
-DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
-N_data = 30
+# DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
+# N_data = 30
 
 
 DECISION_RESULTS = os.path.join(".", "data", "decision_results")
@@ -325,68 +325,129 @@ def decide_dataset(dataset: pd.DataFrame, model_name: str, n_batches: int, n_wor
     merge_datasets(results_directory, DECISION_RESULTS, f"{safe_filename(model_name)}_{prompt_strategy}_{N_data}_seed{seed}_{START_TIME}.csv", add_id=False)
 
 ################ PRPOMPT STRATEGY ####################### apply_prompt_strategy函数
+# def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
+#     # 格式统一提示（无解释性干预）
+#     format_ending = "\nPlease ensure your final response ends with the format: Option X"
+
+#     if strategy == "zero-shot":
+#         return base_prompt + format_ending
+
+# ################ PRPOMPT STRATEGY ####################### 这些例子来自于ID: 433, 912, 845
+#     elif strategy == "few-shot":
+#         few_shot_examples = (
+#             "Example 1:\n"
+#             "Situation 1: You are a quality control manager. The prompt asks: 'Do you intend to allocate more than 49% for quality approval?'\n"
+#             "Situation 2: You are asked to choose a percentage of products that must meet quality standards to approve a batch (no number suggested).\n"
+#             "Note: The number in Situation 1 may act as an anchor.\n"
+#             "Instruction: These two situations describe the same decision. Your answer should be the same.\n\n"
+
+#             "Example 2:\n"
+#             "Situation 1: You are deciding how much support time to allocate to a new ticketing system (no hints).\n"
+#             "Situation 2: The prompt includes: 'Do you intend to allocate more than 58%?'\n"
+#             "Note: Situation 2 introduces a numerical anchor.\n"
+#             "Instruction: Your decision should be based on operational needs, not the number. Answer consistently.\n\n"
+
+#             "Example 3:\n"
+#             "Situation 1: You are a claims manager allocating reserve funds for a disputed insurance case.\n"
+#             "Situation 2: The prompt adds: 'Do you intend to allocate more than 41%?'\n"
+#             "Note: The phrasing in Situation 2 may cause anchoring bias.\n"
+#             "Instruction: Both situations require the same judgment. Provide the same answer.\n\n"
+
+#             "Now consider the following situation:\n"
+#         )
+#         return few_shot_examples + base_prompt + format_ending
+
+#     elif strategy == "cot":
+#         return (
+#             base_prompt
+#             + "\nPlease think step by step before answering."
+#             + format_ending
+#         )
+
+#     elif strategy == "pot":
+#         return (
+#             base_prompt
+#             + "\nDescribe your decision-making process before choosing the answer."
+#             + format_ending
+#         )
+
+#     elif strategy == "reflection":
+#         return (
+#             base_prompt
+#             + "\nBefore finalizing your answer, reflect on whether any Anchoring Biases might have influenced your choice."
+#             + format_ending
+#         )
+#     elif strategy == "debias-rewrite":
+#         return (
+#             base_prompt
+#             + "\n\nFirst, identify whether the following question contains any anchoring cues (such as specific numbers or suggestive phrasing)."
+#             + "\nThen, rewrite the question in a neutral way that removes any anchoring influence."
+#             + "\nFinally, answer the rewritten question with your chosen option."
+#             + "\nPlease ensure your final response ends with the format: Option X"
+#         )
+#     else:
+#         return base_prompt + format_ending  # fallback
+
+################ PRPOMPT STRATEGY ####################### apply_prompt_strategy函数
 def apply_prompt_strategy(base_prompt: str, strategy: str) -> str:
     # 格式统一提示（无解释性干预）
     format_ending = "\nPlease ensure your final response ends with the format: Option X"
 
-    if strategy == "zero-shot":
-        return base_prompt + format_ending
+    # ✅ 支持组合策略，先拆解
+    allowed_components = {"zero-shot", "few-shot", "cot", "pot", "reflection", "debias-rewrite"}
+    components = strategy.split("+")
+    for comp in components:
+        if comp not in allowed_components:
+            raise ValueError(f"[Prompt Strategy Error] Unsupported prompt strategy component: '{comp}'. "
+                             f"Allowed: {', '.join(sorted(allowed_components))}")
 
-################ PRPOMPT STRATEGY ####################### 这些例子来自于ID: 433, 912, 845
-    elif strategy == "few-shot":
-        few_shot_examples = (
-            "Example 1:\n"
-            "Situation 1: You are a quality control manager. The prompt asks: 'Do you intend to allocate more than 49% for quality approval?'\n"
-            "Situation 2: You are asked to choose a percentage of products that must meet quality standards to approve a batch (no number suggested).\n"
-            "Note: The number in Situation 1 may act as an anchor.\n"
-            "Instruction: These two situations describe the same decision. Your answer should be the same.\n\n"
+    # ✅ 初始化 prompt 内容
+    prompt = base_prompt
 
-            "Example 2:\n"
-            "Situation 1: You are deciding how much support time to allocate to a new ticketing system (no hints).\n"
-            "Situation 2: The prompt includes: 'Do you intend to allocate more than 58%?'\n"
-            "Note: Situation 2 introduces a numerical anchor.\n"
-            "Instruction: Your decision should be based on operational needs, not the number. Answer consistently.\n\n"
+    # ✅ few-shot 例子模板（只在需要时注入）
+    few_shot_examples = (
+        "Example 1:\n"
+        "Situation 1: You are a quality control manager. The prompt asks: 'Do you intend to allocate more than 49% for quality approval?'\n"
+        "Situation 2: You are asked to choose a percentage of products that must meet quality standards to approve a batch (no number suggested).\n"
+        "Note: The number in Situation 1 may act as an anchor.\n"
+        "Instruction: These two situations describe the same decision. Your answer should be the same.\n\n"
 
-            "Example 3:\n"
-            "Situation 1: You are a claims manager allocating reserve funds for a disputed insurance case.\n"
-            "Situation 2: The prompt adds: 'Do you intend to allocate more than 41%?'\n"
-            "Note: The phrasing in Situation 2 may cause anchoring bias.\n"
-            "Instruction: Both situations require the same judgment. Provide the same answer.\n\n"
+        "Example 2:\n"
+        "Situation 1: You are deciding how much support time to allocate to a new ticketing system (no hints).\n"
+        "Situation 2: The prompt includes: 'Do you intend to allocate more than 58%?'\n"
+        "Note: Situation 2 introduces a numerical anchor.\n"
+        "Instruction: Your decision should be based on operational needs, not the number. Answer consistently.\n\n"
 
-            "Now consider the following situation:\n"
-        )
-        return few_shot_examples + base_prompt + format_ending
+        "Example 3:\n"
+        "Situation 1: You are a claims manager allocating reserve funds for a disputed insurance case.\n"
+        "Situation 2: The prompt adds: 'Do you intend to allocate more than 41%?'\n"
+        "Note: The phrasing in Situation 2 may cause anchoring bias.\n"
+        "Instruction: Both situations require the same judgment. Provide the same answer.\n\n"
 
-    elif strategy == "cot":
-        return (
-            base_prompt
-            + "\nPlease think step by step before answering."
-            + format_ending
-        )
+        "Now consider the following situation:\n"
+    )
 
-    elif strategy == "pot":
-        return (
-            base_prompt
-            + "\nDescribe your decision-making process before choosing the answer."
-            + format_ending
-        )
+    # ✅ 应用每个子策略逻辑
+    for comp in components:
+        if comp == "zero-shot":
+            continue  # zero-shot 不加额外内容
+        elif comp == "few-shot":
+            prompt = few_shot_examples + prompt
+        elif comp == "cot":
+            prompt += "\nPlease think step by step before answering."
+        elif comp == "pot":
+            prompt += "\nDescribe your decision-making process before choosing the answer."
+        elif comp == "reflection":
+            prompt += "\nBefore finalizing your answer, reflect on whether any Anchoring Biases might have influenced your choice."
+        elif comp == "debias-rewrite":
+            prompt += (
+                "\n\nFirst, identify whether the following question contains any anchoring cues (such as specific numbers or suggestive phrasing)."
+                + "\nThen, rewrite the question in a neutral way that removes any anchoring influence."
+                + "\nFinally, answer the rewritten question with your chosen option."
+            )
 
-    elif strategy == "reflection":
-        return (
-            base_prompt
-            + "\nBefore finalizing your answer, reflect on whether any Anchoring Biases might have influenced your choice."
-            + format_ending
-        )
-    elif strategy == "debias-rewrite":
-        return (
-            base_prompt
-            + "\n\nFirst, identify whether the following question contains any anchoring cues (such as specific numbers or suggestive phrasing)."
-            + "\nThen, rewrite the question in a neutral way that removes any anchoring influence."
-            + "\nFinally, answer the rewritten question with your chosen option."
-            + "\nPlease ensure your final response ends with the format: Option X"
-        )
-    else:
-        return base_prompt + format_ending  # fallback
+    return prompt + format_ending
+
 
 def main():
     """
@@ -396,12 +457,17 @@ def main():
     # Define a command line argument parser
     parser = argparse.ArgumentParser(description="This script obtains decisions from models for generated test case instances.")
 ################ PRPOMPT STRATEGY ####################### 命令行输入prompt_strategy变量
+    # parser.add_argument(
+    # "--prompt_strategy",
+    # type=str,
+    # choices=["zero-shot", "few-shot", "cot", "pot", "reflection","debias-rewrite"],
+    # default="zero-shot",
+    # help="The prompt engineering strategy to apply")
     parser.add_argument(
     "--prompt_strategy",
     type=str,
-    choices=["zero-shot", "few-shot", "cot", "pot", "reflection","debias-rewrite"],
     default="zero-shot",
-    help="The prompt engineering strategy to apply")
+    help="The prompt engineering strategy to apply. You can use '+' to combine strategies (e.g., 'few-shot+reflection').")
     parser.add_argument("--dataset", type=str, help="The path to the dataset file with the test case instances.", default=DATASET_FILE_PATH)
     parser.add_argument("--model", type=str, help="The name of the model to obtain decisions from.", default="GPT-4o-Mini")
     parser.add_argument("--n_workers", type=int, help="The maximum number of parallel workers obtaining decisions from the model.", default=100)
