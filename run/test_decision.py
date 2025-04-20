@@ -27,11 +27,14 @@ START_TIME = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 # References to relevant data directories
 # DATASET_FILE_PATH = os.path.join(".", "data", "full_dataset.csv")
 
-DATASET_FILE_PATH = os.path.join(".", "data", "first_1000_rows.csv")
-N_data = 1000
+# DATASET_FILE_PATH = os.path.join(".", "data", "first_1000_rows.csv")
+# N_data = 1000
 
 # DATASET_FILE_PATH = os.path.join(".", "data", "Anchoring_dataset_first_30_rows.csv")
 # N_data = 30
+
+DATASET_FILE_PATH = os.path.join(".", "data", "Shuffled_Combined_Dataset.csv")
+N_data = 1800
 
 
 DECISION_RESULTS = os.path.join(".", "data", "decision_results")
